@@ -47,63 +47,90 @@ Collisions at RHIC}
 \section{Introduction}
 %{{{
 
-In this study we propose to measure the asymmetry of the vector bosons produced
-in transversely polarized proton collisions at STAR. First, we focus on the $W$
-bosons decayed into a lepton pair ($W^\pm \to e^\pm \nu_e$). However, most of the
-developed formulae can be used in the measurement of $Z$ boson asymmetry, and
-we will consider this case later. From the measured asymmetry it is possible to
-verify theoretical expectations about the sign change of the Sivers function in
-Drell-Yan and SIDIS interactions:
+This study is the first attempt to measure the single spin asymmetry for weak bosons produced
+in transversely polarized proton collisions at STAR. 
 
+Transversely polarized spin effects have been an extremely active topic among experiment and theory in the past years, because of their connection to transverse momentum dependent (TMD) distributions (leading to a multi-dimensional picture of the proton) and a possible test of the framework and the underlying theory of perturbative QCD. For a quantitative application of the TMD framework to transverse single-spin asymmetries measured in proton-proton collisions, the required two scales (typically $Q^{2}$ and $p_{T}$) are not well defined, excepted for Drell-Yan di-lepton (DY) and $W^{\pm}$,$Z^{0}$ boson production. DY production has been at the center of attention for the non-universality test of the so-called Sivers TMD function, %it requires large integrated luminosities and efficient background reduction. The high mass of $W$-bosons naturally provides a hard $Q^{2}$ scale already and their transverse asymmetries can be directly applied to a global TMD analysis.
+$f^{\perp}_{1T}$, which describes the correlation of parton transverse momentum with the transverse spin of the nucleon.  There is evidence of a quark Sivers effect in semi-inclusive DIS (SIDIS) measurements where the quark Sivers function is associated with a final state effect from the gluon exchange between the struck quark and the target nucleon remnants. On the other hand, for the virtual photon production in the Drell-Yan process, the Sivers asymmetry appears in the initial state of the interaction. As a consequence, the quark Sivers functions are of opposite sign in SIDIS and in Drell-Yan
 %
 \begin{equation}
 f^\text{SIDIS}_{q/h^\uparrow} (x, k_\perp) = - f^\text{DY}_{q/h^\uparrow} (x, k_\perp).
 \end{equation}
 
-The single spin asymmetry (SSA) $A_N$ for the $W$ bosons and the lepton $l$
-from the $W$ decay has been derived in \cite{Kang:2009bp, zpaper}. It is
-parametrized based on the fits of SIDIS data and given as a function of
-direction and transverse momentum. For the case of $W$ we have:
+The experimental test of this sign change is one of the open questions in hadronic physics, and can provide insights on the TMD factorization. While luminosities required for a meaningful measurement of asymmetries in Drell-Yan production are challenging, $W^{\pm}$ and $Z^{0}$ bosons production is equally sensitive to the predicted sign change and can be well measured at the STAR experiment.  The results can also provide essential input to study the new theoretical concept of evolution effects of transverse momentum dependent distribution functions, because of the high $Q^{2}$ in the $W\rightarrow e \nu$ production due to the large boson mass. The STAR experiment at RHIC is currently the only place in the world where these effects can be tested.
+
+The transverse single spin asymmetry, $A_N$, has been derived in~\cite{Kang:2009bp} and its parametrization is based on the fits to SIDIS data.
+Predictions show that a transverse asymmetry solely calculated from the lepton decay is diluted~\cite{Kang:2009bp} if compared to the same asymmetry calculated directely from the produced boson. 
+Thus, a full reconstruction of the produced boson kinematics is crucial for a meaningful measurement.
+The present analysis is based on a data sample collected in the year 2011 at STAR using transversely polarized proton-proton collisions at the center-of-mass energy of $\sqrt(s)=500~GeV$, the total integrated luminosity is $L_{int} = 25$ pb$^{-1}$. In the present woek we use this exploratory run to test the possibility of fully reconstructing the $W^{\pm}$ boson kinematics at STAR, using the lepton decay and all other particles in the recoil from the initial hard scattering. This analysis also includes a first look at $A_{N}$ in $Z^{0}$ production. 
+%A proposed measurement with increased statistics in 2016 will be directly competitive with a Drell-Yan measurement in pion-proton scattering at CERN.
+
+%The single spin asymmetry (SSA) $A_N$ for the $W$ bosons and the lepton $l$
+%from the $W$ decay has been derived in \cite{Kang:2009bp}. It is
+%parametrized based on the fits of SIDIS data and given as a function of
+%direction and transverse momentum. For the case of $W$ we have:
 %
-\begin{equation}
-A^W_N = A^W_N(y_W, \phi_W, q_T) \equiv A_N(y, \phi, p_T) = A_N(\Omega, p_T),
-\label{eq:asym_wboson}
-\end{equation}
+%\begin{equation}
+%A^W_N = A^W_N(y_W, \phi_W, q_T) \equiv A_N(y, \phi, p_T) = A_N(\Omega, p_T),
+%\label{eq:asym_wboson}
+%\end{equation}
 %
-where $\Omega = \{y, \phi\}$ is simply used as a shorthand for the direction of
-the particle in the lab frame. Similarly, for the lepton the expectated
-asymmetry depends on the direction of the lepton and its transverse momentum:
+%where $\Omega = \{y, \phi\}$ is simply used as a shorthand for the direction of
+%the particle in the lab frame. Similarly, for the lepton the expectated
+%asymmetry depends on the direction of the lepton and its transverse momentum:
 %
-\begin{equation}
-A^l_N = A^l_N(\eta_l, \phi_l, p_T) \equiv A_N(y, \phi, p_T) = A_N(\Omega, p_T)
-\label{eq:asym_lepton}
-\end{equation}
+%\begin{equation}
+%A^l_N = A^l_N(\eta_l, \phi_l, p_T) \equiv A_N(y, \phi, p_T) = A_N(\Omega, p_T)
+%\label{eq:asym_lepton}
+%\end{equation}
 
 %}}}
 
 
-\section{Experimental Viewpoint}
-%{{{
+\section{The $W^{\pm}$ selection and asymmetry measurement}
+A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T} > 25$~GeV electron and a total recoil $P_{T} >18$~GeV.
+In order to fully reconstruct the $W$ kinematics the momenta of all $W$ decay
+products must be measured. The momentum of the neutrino produced in the leptonically decayed $W$
+cannot be measured and can only be indirectly deduced from conservation of the total momentum. 
+in the $W$ events produced at $\sqrt{s}=500$~GeV
+at STAR we can assume that most of the missing energy, $\missET$ is carried by the neutrino from the
+$W$ decay. The assumption ${P}_{\nu, T} \approx \missET$ is based on the
+fact that only very little energy is left for anything other than $W$ production
+from the primary hard scattering.
+In the transverse plane the initial momentum of the system of interacting partons is negligible
+and so must be the vector sum of all final particles momenta. We define the
+missing transverse energy as a vector restoring the balance in the event:
 
-For the SSA measurements we are interested in the proton interactions
-$p^{\uparrow/\downarrow} p \to W^\pm \to e^\pm \nu_e$ in which the spin direction of one
-of the protons is irrelevant, \textit{i.e} unpolarized protons. In the
-experiment we can separately measure full and differential cross sections for
-spin-up ($\sigma_\uparrow$), spin-down ($\sigma_\downarrow$), and unpolarized
-($\sigma_0$) interactions which are related as:
+\begin{equation}
+\missET = - \sum_{i \in \parbox[t]{\widthof{\tiny clusters}}{\tiny tracks, clusters}} \vv P_{i,T}.
+%miss ET = - \sum_{clusters}{jets, tracks, clusters} P_{i,T}.
+\end{equation}
 
-\begin{align}
-\sigma_\uparrow   &= \sigma_0 (1 + A_N ), \\
-\sigma_\downarrow &= \sigma_0 (1 - A_N ).
-\end{align}
+In a typical collider detector like STAR the problem with measuring the missing momentum from the hadronic recoil
+is that particles with very high rapidities escape the detector. At the same time, the beam remnants with high
+longitudinal momentum carry away only a little portion of the total transverse
+momentum. We accounted for the non measured tracks and clusters by using an event-by-event Monte Carlo 
+correction to the data.
+Knowing its transverse momentum, the longitudinal component of the neutrino's momentum can be reconstructed solving the quadratic equation for the invariant mass of the produced boson
 
-In the following we assume that the polarization vector does not significantly
+\begin{equation}
+\label{eq_InvMass}
+M^{2}_{W}=(E_{e}+E_{\nu})^{2} - (\vv P_{e}+\vv P_{\nu})^{2},
+\end{equation}
+where we assumed the nominal value of the $W$-mass.  Eq.~\ref{eq_InvMass} leads to two possible solutions for $P_{L}^{\nu}$, we chose the smaller one in magnitude because it leads to a much smaller fraction of mis-reconstructed events in our kinematic domain.
+
+Background sources coming from $W^{\pm}\rightarrow \tau^{\pm} \nu_{\tau}$, $Z^{0} \rightarrow e^{+}e^{-}$ and QCD events have been estimated to be contained within maximum a few percent of the selected sample.
+
+%For the $A_{N}$ measurement we are interested in the interaction
+%$p^{\uparrow/\downarrow} p \to W^\pm \to e^\pm \nu_e$ in which the spin direction of one
+%of the protons is irrelevant, \textit{i.e} unpolarized protons. 
+In measuring $A_{N}$ we assume that the beam polarization vector does not significantly
 deviate from the vertical direction given by the normal unit vector $\vec n$
-along the vertical $y$ axis so, the notation is $P \equiv \vec{P} \cdot
-\vec{n}$. We also assume the same magnitude of the polarization vector for
+along the vertical $y$ axis, $P \equiv \vec{P} \cdot \vec{n}$. 
+We also assume the same magnitude of the polarization vector for
 spin-up and spin-down bunches, \textit{i.e.} $P = P_\uparrow = P_\downarrow$.
-For unpolarized cross section $\sigma_0 \equiv (\sigma_\uparrow +
-\sigma_\downarrow)/2$ the asymmetry $A_N$ is expressed as:
+%For unpolarized cross section $\sigma_0 \equiv (\sigma_\uparrow + \sigma_\downarrow)/2$ 
+The single spin asymmetry $A_N$ is expressed as:
 
 \begin{align}
 \label{eq_anapower}
@@ -111,23 +138,16 @@ A_N &= \frac{\sigma_\uparrow - \sigma_\downarrow}{\sigma_\uparrow +
    \sigma_\downarrow}.
 \end{align}
 
-The number of recorded events in which the particle is produced with momentum
-$p_T$ at angle $\Omega$ is:
+We bin our data sample in three observable variables, $\{y, \phi, P_T\}$, of the produced boson. Thus, 
+we calculated $A_{N}$ using the square root formula~\cite{sqrtFormula}, which helps to cancel out unwanted effects due to geometry and luminosity.
 
 \begin{align}
-\frac{dN_{\uparrow/\downarrow}}{d\Omega dp_T}(\Omega, p_T) &=
-   {\cal L}_{\uparrow/\downarrow} \frac{d\sigma_0}{d\Omega dp_T}(\Omega, p_T)
-   \varepsilon(\Omega, p_T) \big( 1 \pm A_N(\Omega, p_T) P \big),
-\label{eq:yield_diff}
+A_{N } sin(\phi)= \frac{1}{<P>}
+\frac{\sqrt{N_\uparrow(\phi_i)N_\downarrow(\phi_i+\pi)} - \sqrt{N_\uparrow(\phi_i+\pi)N_\downarrow(\phi_i)} } 
+{\sqrt{N_\uparrow(\phi_i)N_\downarrow(\phi_i+\pi)} + \sqrt{N_\uparrow(\phi_i+\pi)N_\downarrow(\phi_i)}},
 \end{align}
-
-\noindent
-where detection efficiency $\varepsilon$ does not depend on the spin direction
-of the interacting proton. In fact, individual events can be tagged by the
-nominal spin of colliding protons. We thus can bin all collected data  in four
-bins $N_{\uparrow\uparrow}$, $N_{\uparrow\downarrow}$,
-$N_{\downarrow\uparrow}$, and $N_{\downarrow\downarrow}$. For the SSA
-measurement the polarization of one of the beams is ignored by combining the
+where $N$ is the number of recorded events in the $i-th$ bin with a certain spin ($\uparrow \downarrow$) configuration in the ``left'' ($\phi_{i}$) or in the ``right'' ($\phi_{i} + \pi$) side of the detector and $<P>\simeq 53\%$ is the average RHIC beam polarization for 2011 transverse p+p run.  
+For the asymmetry measurement the polarization of one of the beams is ignored by combining the
 yields with opposite spins, \textit{e.g.}
 
 \begin{align}
@@ -141,77 +161,15 @@ possible relative difference in the spin-up and spin-down intensities of the
 other beam. Studies have shown that $R_{\frac{0\uparrow}{0\downarrow}} \approx
 1$ with good precision.
 
-We bin our data sample in three observable variables $\{y, \phi, p_T\}$ with
-center and width of the $i$-th bin being $\{y_i, \phi_i, p_{T,i}\}$ and
-$\{\Delta y_i, \Delta\phi_i, \Delta p_{T,i}\} \equiv \{\Delta\Omega_i\{y_i,
-\Delta\phi_i\}, \Delta p_{T,i}\} \equiv \Delta_i$ respectively. The number of
-events in each bin, $N_i$, is calculated by integrating both sides
-of~\eqref{eq:yield_diff} within the bin:
 
-\begin{align}
-N_{\uparrow/\downarrow, i} =
-   \int\limits_{\Delta_i} \frac{dN_{\uparrow/\downarrow}}{d\Omega dp_T} d\Omega dp_T.
-\end{align}
+\section{Background estimation}
 
-\noindent
-In that bin we assume the average value:
-
-\begin{align}
-A_{N,i} = \frac{1}{\Delta_i} \int\limits_{\Delta_i} A_N d\Omega dp_T,
-\end{align}
-
-\noindent
-and similarly for the cross section ($\sigma_{0,i}$) and efficiency
-($\varepsilon_i$). Finally, for the yields in each bin we can write:
-
-\begin{align}
-N_{\uparrow/\downarrow, i} = {\cal L}_{\uparrow/\downarrow} \sigma_{0,i}
-\varepsilon_i \Delta\Omega_i \Delta p_{T,i} \left( 1 \pm A_{N,i}(\Omega, p_T) P \right)
-\label{eq:yield}
-\end{align}
-
-The spacial distributions of the physical asymmetry and the cross sections are
-the same for the spin-up and spin-down interactions with respect to the spin
-direction. We can use this fact to easily get rid of the  quantities of no
-interest in \eqref{eq:yield}. This is achieved by constructing geometric
-means $\sqrt{N_\uparrow(\phi_i)N_\downarrow(\phi_i+\pi)}$ and
-$\sqrt{N_\uparrow(\phi_i+\pi)N_\downarrow(\phi_i)}$ of the yields
-
-
-\begin{align}
-N_\uparrow(\phi_i)       &= {\cal L_\uparrow}
-   \sigma_{0}(\phi_i) \varepsilon(\phi_i)    \Delta\Omega_i \Delta p_T \left( 1 + A_{N}(\phi_i) P \right) \\
-%
-N_\uparrow(\phi_i+\pi)       &= {\cal L_\uparrow}
-   \sigma_{0}(\phi_i+\pi) \varepsilon(\phi_i+\pi)    \Delta\Omega_i \Delta p_T \left( 1 + A_{N}(\phi_i+\pi) P \right)
-\end{align}
-
-
-\begin{align}
-N_\downarrow(\phi_i+\pi) &= {\cal L_\downarrow}
-   \sigma_{0}(\phi_i+\pi) \varepsilon(\phi_i+\pi) \Delta\Omega_i \Delta p_T \left( 1 - A_{N}(\phi_i+\pi) P \right) \\
-%
-N_\downarrow(\phi_i) &= {\cal L_\downarrow}
-   \sigma_{0}(\phi_i) \varepsilon(\phi_i) \Delta\Omega_i \Delta p_T \left( 1 - A_{N}(\phi_i) P \right)
-\end{align}
-
-
-Using the relations for the asymmetry and cross section $A_{N}(\phi_i+\pi) =
--A_{N}(\phi_i)$, $\sigma_0(\phi_i+\pi) = \sigma_0(\phi_i)$ we get for $A_N$
-
-
-\begin{align}
-A_{N, i} = \frac{1}{P} \frac{%
-\sqrt{N_{\uparrow}(\phi_i)N_{\downarrow}(\phi_i+\pi)} -
-\sqrt{N_{\uparrow}(\phi_i+\pi)N_{\downarrow}(\phi_i)}
-}{%
-\sqrt{N_{\uparrow}(\phi_i)N_{\downarrow}(\phi_i+\pi)} +
-\sqrt{N_{\uparrow}(\phi_i+\pi)N_{\downarrow}(\phi_i)}
-}
-\label{eq:asym_sqrt}
-\end{align}
-
-%}}}
+The background sources considered in this analysis are: 
+$Z^{0} \rightarrow e^+e^-$; 
+$W^{\pm} \rightarrow \tau\nu \rightarrow e^+e^-\nu$; 
+QCD events decaying into leptons, 
+where one of the final leptons is not detected.
+The first two sources have been evaluated using PYTHIA sample simulates with.... STAR Geometry... and embedded to 2011 transverse zero-bias events.
 
 
 \section{Correction for Background}
@@ -403,6 +361,136 @@ decaying leptonically at STAR as a function of the boson's rapidity.}
 %}}}
 
 
+\section{Asymmetry measurement}
+%{{{
+
+For the SSA measurements we are interested in the proton interactions
+$p^{\uparrow/\downarrow} p \to W^\pm \to e^\pm \nu_e$ in which the spin direction of one
+of the protons is irrelevant, \textit{i.e} unpolarized protons. In the
+experiment we can separately measure full and differential cross sections for
+spin-up ($\sigma_\uparrow$), spin-down ($\sigma_\downarrow$), and unpolarized
+($\sigma_0$) interactions which are related as:
+
+\begin{align}
+\sigma_\uparrow   &= \sigma_0 (1 + A_N ), \\
+\sigma_\downarrow &= \sigma_0 (1 - A_N ).
+\end{align}
+
+In the following we assume that the polarization vector does not significantly
+deviate from the vertical direction given by the normal unit vector $\vec n$
+along the vertical $y$ axis so, the notation is $P \equiv \vec{P} \cdot
+\vec{n}$. We also assume the same magnitude of the polarization vector for
+spin-up and spin-down bunches, \textit{i.e.} $P = P_\uparrow = P_\downarrow$.
+For unpolarized cross section $\sigma_0 \equiv (\sigma_\uparrow +
+\sigma_\downarrow)/2$ the asymmetry $A_N$ is expressed as:
+
+\begin{align}
+\label{eq_anapower}
+A_N &= \frac{\sigma_\uparrow - \sigma_\downarrow}{\sigma_\uparrow +
+   \sigma_\downarrow}.
+\end{align}
+
+The number of recorded events in which the particle is produced with momentum
+$p_T$ at angle $\Omega$ is:
+
+\begin{align}
+\frac{dN_{\uparrow/\downarrow}}{d\Omega dp_T}(\Omega, p_T) &=
+   {\cal L}_{\uparrow/\downarrow} \frac{d\sigma_0}{d\Omega dp_T}(\Omega, p_T)
+   \varepsilon(\Omega, p_T) \big( 1 \pm A_N(\Omega, p_T) P \big),
+\label{eq:yield_diff}
+\end{align}
+
+\noindent
+where detection efficiency $\varepsilon$ does not depend on the spin direction
+of the interacting proton. In fact, individual events can be tagged by the
+nominal spin of colliding protons. We thus can bin all collected data  in four
+bins $N_{\uparrow\uparrow}$, $N_{\uparrow\downarrow}$,
+$N_{\downarrow\uparrow}$, and $N_{\downarrow\downarrow}$. For the SSA
+measurement the polarization of one of the beams is ignored by combining the
+yields with opposite spins, \textit{e.g.}
+
+\begin{align}
+N_{\uparrow}   \equiv N_{\uparrow0}   &= N_{\uparrow\uparrow}   + R_{\frac{0\uparrow}{0\downarrow}} N_{\uparrow\downarrow},\\
+N_{\downarrow} \equiv N_{\downarrow0} &= N_{\downarrow\uparrow} + R_{\frac{0\uparrow}{0\downarrow}} N_{\downarrow\downarrow},
+\end{align}
+
+\noindent
+where re-weighting factor $R_{\frac{0\uparrow}{0\downarrow}}$ addresses a
+possible relative difference in the spin-up and spin-down intensities of the
+other beam. Studies have shown that $R_{\frac{0\uparrow}{0\downarrow}} \approx
+1$ with good precision.
+
+We bin our data sample in three observable variables $\{y, \phi, p_T\}$ with
+center and width of the $i$-th bin being $\{y_i, \phi_i, p_{T,i}\}$ and
+$\{\Delta y_i, \Delta\phi_i, \Delta p_{T,i}\} \equiv \{\Delta\Omega_i\{y_i,
+\Delta\phi_i\}, \Delta p_{T,i}\} \equiv \Delta_i$ respectively. The number of
+events in each bin, $N_i$, is calculated by integrating both sides
+of~\eqref{eq:yield_diff} within the bin:
+
+\begin{align}
+N_{\uparrow/\downarrow, i} =
+   \int\limits_{\Delta_i} \frac{dN_{\uparrow/\downarrow}}{d\Omega dp_T} d\Omega dp_T.
+\end{align}
+
+\noindent
+In that bin we assume the average value:
+
+\begin{align}
+A_{N,i} = \frac{1}{\Delta_i} \int\limits_{\Delta_i} A_N d\Omega dp_T,
+\end{align}
+
+\noindent
+and similarly for the cross section ($\sigma_{0,i}$) and efficiency
+($\varepsilon_i$). Finally, for the yields in each bin we can write:
+
+\begin{align}
+N_{\uparrow/\downarrow, i} = {\cal L}_{\uparrow/\downarrow} \sigma_{0,i}
+\varepsilon_i \Delta\Omega_i \Delta p_{T,i} \left( 1 \pm A_{N,i}(\Omega, p_T) P \right)
+\label{eq:yield}
+\end{align}
+
+The spacial distributions of the physical asymmetry and the cross sections are
+the same for the spin-up and spin-down interactions with respect to the spin
+direction. We can use this fact to easily get rid of the  quantities of no
+interest in \eqref{eq:yield}. This is achieved by constructing geometric
+means $\sqrt{N_\uparrow(\phi_i)N_\downarrow(\phi_i+\pi)}$ and
+$\sqrt{N_\uparrow(\phi_i+\pi)N_\downarrow(\phi_i)}$ of the yields
+
+
+\begin{align}
+N_\uparrow(\phi_i)       &= {\cal L_\uparrow}
+   \sigma_{0}(\phi_i) \varepsilon(\phi_i)    \Delta\Omega_i \Delta p_T \left( 1 + A_{N}(\phi_i) P \right) \\
+%
+N_\uparrow(\phi_i+\pi)       &= {\cal L_\uparrow}
+   \sigma_{0}(\phi_i+\pi) \varepsilon(\phi_i+\pi)    \Delta\Omega_i \Delta p_T \left( 1 + A_{N}(\phi_i+\pi) P \right)
+\end{align}
+
+
+\begin{align}
+N_\downarrow(\phi_i+\pi) &= {\cal L_\downarrow}
+   \sigma_{0}(\phi_i+\pi) \varepsilon(\phi_i+\pi) \Delta\Omega_i \Delta p_T \left( 1 - A_{N}(\phi_i+\pi) P \right) \\
+%
+N_\downarrow(\phi_i) &= {\cal L_\downarrow}
+   \sigma_{0}(\phi_i) \varepsilon(\phi_i) \Delta\Omega_i \Delta p_T \left( 1 - A_{N}(\phi_i) P \right)
+\end{align}
+
+
+Using the relations for the asymmetry and cross section $A_{N}(\phi_i+\pi) =
+-A_{N}(\phi_i)$, $\sigma_0(\phi_i+\pi) = \sigma_0(\phi_i)$ we get for $A_N$
+
+
+\begin{align}
+A_{N, i} = \frac{1}{P} \frac{%
+\sqrt{N_{\uparrow}(\phi_i)N_{\downarrow}(\phi_i+\pi)} -
+\sqrt{N_{\uparrow}(\phi_i+\pi)N_{\downarrow}(\phi_i)}
+}{%
+\sqrt{N_{\uparrow}(\phi_i)N_{\downarrow}(\phi_i+\pi)} +
+\sqrt{N_{\uparrow}(\phi_i+\pi)N_{\downarrow}(\phi_i)}
+}
+\label{eq:asym_sqrt}
+\end{align}
+
+%}}}
 \newpage
 
 \begin{thebibliography}{9}
