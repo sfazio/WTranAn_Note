@@ -26,7 +26,7 @@
 \setcounter{table}{0}
 
 
-\title{Measurement of Vector Boson Asymmetry in Transveresely Polarized $pp$
+\title{Measurement of Vector Boson Asymmetry in Transversely Polarized $pp$
 Collisions at RHIC}
 
 \author{Salvatore Fazio\thanks{fazio@bnl.gov}}
@@ -88,7 +88,21 @@ The present analysis is based on a data sample collected in the year 2011 at STA
 
 
 \section{The $W^{\pm}$ selection and asymmetry measurement}
-A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T} > 25$~GeV electron and a total recoil $P_{T} >18$~GeV.
+A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T}$ electron and a hadronic recoil with a total $P_{T}$ sufficiently large. The selection criteria are the following:
+%$P_{T} > 25$~GeV electron and a total recoil $P_{T} >18$~GeV.
+
+\begin{itemize}
+\item One isolated electron
+    \begin{itemize}
+    \item$P_{T}>25$~GeV.
+    \item Track-$|\eta|<1$
+    \item Isolation criterium: $P^{track}+P^{cluster}/\Sigma[P^{tracks} in R=0.7 cone]$
+    \item track coming from the maximum ranked vertex
+    \end{itemize}
+\item $|Z_{vertex}| < 100$~cm; vertex rank $>$ 0    
+\end{itemize}
+
+\subsection{Transverse momentum reconstruction}
 In order to fully reconstruct the $W$ kinematics the momenta of all $W$ decay
 products must be measured. The momentum of the neutrino produced in the leptonically decayed $W$
 cannot be measured and can only be indirectly deduced from conservation of the total momentum. 
@@ -109,8 +123,66 @@ missing transverse energy as a vector restoring the balance in the event:
 In a typical collider detector like STAR the problem with measuring the missing momentum from the hadronic recoil
 is that particles with very high rapidities escape the detector. At the same time, the beam remnants with high
 longitudinal momentum carry away only a little portion of the total transverse
-momentum. We accounted for the non measured tracks and clusters by using an event-by-event Monte Carlo 
-correction to the data.
+momentum. We accounted for the non measured tracks and clusters by using the following event-by-event Monte Carlo 
+correction to the data
+
+\begin{equation}
+k_{i}=\frac{P^{W}_{T,i}(true)}{P^{Recoil}_{T,i}(reconstructed)},
+\end{equation}
+where $P^{W}_{T,i}(true)$ is the generated $P_{T}$ of the $W$ at MC level and $P^{Recoil}_{T,i}(reconstructed)$ is the $P_{T}$ of the recoil reconstructed after a full GEANT simulation of the detector in each $i$-th bin. The distribution of the correction factor, $k$, versus the recoil $P_{T}$ is shown in fig.~\ref{fig:plot_PtCorrFactor}. The correction has been applied to the data on an event-by-event base as follows
+
+\begin{itemize}
+   \item[--] read the $i$-th bin of recoil-$P_{T}$ from data;
+   \item[--] do a Y-Projection the correction factor from fig.~\ref{fig:plot_PtCorrFactor} in the corresponding $i$-th bin;
+   \item[--] normalize the projection distribution to 1;
+   \item[--] use a random generator to select a correction value from the normalized projection distribution.
+\end{itemize}
+
+A MC test shows that after the correction has been applied, data are in a very good agreement with predictions from RhicBOS and PYTHIA, as shown in fig.~\ref{fig:plot_PtCorr}. In reconstructing the hadronic recoil from the tracks and clusters, additional cuts have been applied to avoid the very low recoli-$P_{T}$, when most of the tracks fall off the STAR tracker (TPC) acceptance 
+\begin{itemize}
+   \item[--] Total recoil-$P_{T} > 0.5$~GeV; 
+    \item[--] $P_{T}$ of each single track in the recoil $> 0.2$~GeV. 
+\end{itemize}
+Figure~\ref{fig:plot_DataMc_WpPt_PtRecoil} shows how the data/MC agreements improves requiring a minimum recoil-$P_{T}$ value of 0.5~GeV compared with a lower or no threshold.
+The final data/MC agreement for reconstructing the $W$ boson transverse momentum over an extended range is  shown in fig.~\ref{fig:plot_DataMc_WpPt}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{images/plot_PtCorrFactor}
+\end{center}
+\caption{Here goes a caption.}
+\label{fig:plot_PtCorrFactor} 
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.4]{images/plot_PtCorr}
+\includegraphics[scale=0.4]{images/plot_PtCorr2}
+\end{center}
+\caption{Here goes a caption.}
+\label{fig:plot_PtCorr} 
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.28]{images/Pt-Recoil-study/plot_DataMc_WpPt_PtRecoil02}
+\includegraphics[scale=0.28]{images/Pt-Recoil-study/plot_DataMc_WpPt_PtRecoil03}
+\includegraphics[scale=0.28]{images/Pt-Recoil-study/plot_DataMc_WpPt_PtRecoil05}
+\end{center}
+\caption{Data/MC agreement for the total recoil-$P_{T}$ with a minimum value of $P_{T}>0.2$~GeV ({\it left}), $P_{T}>0.3$~GeV ({\it center}) and $P_{T}>0.5$~GeV ({\it right}).}
+\label{fig:plot_DataMc_WpPt_PtRecoil}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.4]{images/plot_DataMc_WpPt}
+\end{center}
+\caption{Data/MC agreement for the total recoil-$P_{T}$ with a minimum value of $P_{T}>0.5$~GeV and a minimum single track-$P_{T} > 0.2$~GeV.}
+\label{fig:plot_DataMc_WpPt} 
+\end{figure}
+
+\subsection{Longitudinal momentum reconstruction}
 Knowing its transverse momentum, the longitudinal component of the neutrino's momentum can be reconstructed solving the quadratic equation for the invariant mass of the produced boson
 
 \begin{equation}
