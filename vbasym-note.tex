@@ -87,7 +87,7 @@ The present analysis is based on a data sample collected in the year 2011 at STA
 %}}}
 
 
-\section{The $W^{\pm}$ selection and asymmetry measurement}
+\section{The $W^{\pm}$ selection}
 A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T}$ electron and a hadronic recoil with a total $P_{T}$ sufficiently large. The selection criteria are the following:
 %$P_{T} > 25$~GeV electron and a total recoil $P_{T} >18$~GeV.
 
@@ -189,10 +189,66 @@ Knowing its transverse momentum, the longitudinal component of the neutrino's mo
 \label{eq_InvMass}
 M^{2}_{W}=(E_{e}+E_{\nu})^{2} - (\vv P_{e}+\vv P_{\nu})^{2},
 \end{equation}
-where we assumed the nominal value of the $W$-mass.  Eq.~\ref{eq_InvMass} leads to two possible solutions for $P_{L}^{\nu}$, we chose the smaller one in magnitude because it leads to a much smaller fraction of mis-reconstructed events in our kinematic domain.
+where we assumed the nominal value of the $W$-mass.  Eq.~\ref{eq_InvMass} leads to two possible solutions for $P_{L}^{\nu}$. To distinguish between the two solutions, from now on we name ``first solution'' the one with the smaller absolute value and ``second solution'' the remnant one. In order to choose which solution should be used, the fraction of correctly reconstructed events for each solution was estimated via MC. The MC distribution of the reconstructed $P^{W}_{L}$ versus the generated level one is shown in Fig.~\ref{fig:plot_hRecoVsWBosonPz}  for both solutions separately. To estimate the amount of ``well reconstructed'' events we considered all the events with a reconstructed longitudinal moments within 30~GeV from the generated value (the to black limit-lines in  Fig.~\ref{fig:plot_hRecoVsWBosonPz}). The overall fraction of well reconstructed events, estimated according to this criterium, is shown for both solutions separately in the upper side of each plot in Fig.~\ref{fig:plot_hRecoVsWBosonPz}.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.4]{images/P_long_study/hRecoVsWBosonPz_FirstSol}
+\includegraphics[scale=0.4]{images/P_long_study/hRecoVsWBosonPz_OtherSol}
+\end{center}
+\caption{MC distribution of reconstructed versus generated $P^{W}_{L}$ for the first solution ({\it left}) and the second solution ({\it right}) respectively.}
+\label{fig:plot_hRecoVsWBosonPz} 
+\end{figure} 
+Thus, we investigated the fraction of well reconstructed events in bins of  generated $P^{W}_{L}$, as shown in Fig.~\ref{fig:plot_hWBosonPz_GoodRecoFraction}.
+ 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.4]{images/P_long_study/hWBosonPz_GoodRecoFraction}
+\includegraphics[scale=0.4]{images/P_long_study/hWBosonPz_GoodRecoFraction_OtherSol}
+\end{center}
+\caption{Estimated fraction of well reconstructed events as a function of generated $P^{W}_{L}$ for the first solution ({\it left}) and the second solution ({\it right}) respectively.}
+\label{fig:plot_hWBosonPz_GoodRecoFraction} 
+\end{figure}
 
-Background sources coming from $W^{\pm}\rightarrow \tau^{\pm} \nu_{\tau}$, $Z^{0} \rightarrow e^{+}e^{-}$ and QCD events have been estimated to be contained within maximum a few percent of the selected sample.
+It is evident that the first solution better reconstructs  $P^{W}_{L}<40$~GeV whereas the second solution works better for larger longitudinal momenta.  
+Having in mind that our $W$ bosons are often produced with a longitudinal momentum smaller than 40~GeV, we chose the solution smaller in magnitude, namely the first solution, to reconstruct the boson kinematics because it leads to a much smaller fraction of mis-reconstructed events in our kinematic domain.
 
+%Background sources coming from $W^{\pm}\rightarrow \tau^{\pm} \nu_{\tau}$, $Z^{0} \rightarrow e^{+}e^{-}$ and QCD events have been estimated to be contained within maximum a few percent of the selected sample.
+
+\subsection{Background estimation}
+
+The background sources considered in this analysis are: 
+$Z^{0} \rightarrow e^+e^-$; 
+$W^{\pm} \rightarrow \tau\nu \rightarrow e^+e^-\nu$; 
+QCD events decaying into leptons, 
+where one of the final leptons is not detected.
+The first two sources have been evaluated using MC samples simulated with PYTHIA 6.4 using the ``Perugia tune'' and setting $k_{T}=2$ and $ckin(3)=10$. The MC samples passed trough the GEANT 3 simulation of the STAR detector using the SL11d libraries and embedded to the run11 p+p transverse zero-bias events. To estimate the contribution from the background, the MC samples have been normalized to the data according to the luminosity and the is contribution is shown in Fig.~\ref{fig:plot_WZ_backgorunds} for the $W^{+}$ (upper plot) and the $W^{-}$ (lower plot) data samples respectively. The estimated background-over-signal values for $W^{\pm} \rightarrow \tau\nu$ and $Z^{0} \rightarrow e^+e^-$ are shown in the first columns of Table~\ref{Tab:BoS}. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{images/backgrounds/plot_4}\\
+\includegraphics[scale=0.6]{images/backgrounds/plot_6}
+\end{center}
+\caption{Here goes a caption.}
+\label{fig:plot_WZ_backgorunds} 
+\end{figure}
+
+% Table of backgrounds
+\begin{table}[htbp]
+\centering
+\begin{tabular}{| l | c | c  |  c |}
+\hline
+Process & $W^{\pm}\rightarrow \tau^{\pm} \nu_{\tau}$ & $Z^{0} \rightarrow e^{+}e^{-}$ & QCD \\
+\hline
+B/S & 1.88\% ($W^{+}$); 1.39\% ($W^{-}$)&  0.88\% ($W^{+}$); 2.94\% ($W^{-}$)& 1.59\% ($W^{+}$); 3.40\% ($W^{-}$)\\
+\hline
+\end{tabular}
+\caption{Background over signal in the $W^{+}$ and $W^{-}$ samples respectively.}
+\label{Tab:BoS}
+\end{table}
+
+The case of background coming from QCD events is more peculiar since we canon trust the luminosity given by the MC generator. In estimating the background from this source, we used a ``data-driven'' technique already used at STAR for the $W$ decay analysis with longitudinal beam polarization~\cite{STAR:Wlong}. 
+
+\section{asymmetry measurement}
 %For the $A_{N}$ measurement we are interested in the interaction
 %$p^{\uparrow/\downarrow} p \to W^\pm \to e^\pm \nu_e$ in which the spin direction of one
 %of the protons is irrelevant, \textit{i.e} unpolarized protons. 
@@ -233,15 +289,6 @@ possible relative difference in the spin-up and spin-down intensities of the
 other beam. Studies have shown that $R_{\frac{0\uparrow}{0\downarrow}} \approx
 1$ with good precision.
 
-
-\section{Background estimation}
-
-The background sources considered in this analysis are: 
-$Z^{0} \rightarrow e^+e^-$; 
-$W^{\pm} \rightarrow \tau\nu \rightarrow e^+e^-\nu$; 
-QCD events decaying into leptons, 
-where one of the final leptons is not detected.
-The first two sources have been evaluated using PYTHIA sample simulates with.... STAR Geometry... and embedded to 2011 transverse zero-bias events.
 
 
 \section{Correction for Background}
@@ -567,8 +614,6 @@ A_{N, i} = \frac{1}{P} \frac{%
 
 \begin{thebibliography}{9}
 
-\bibitem{WCrossSecRun9}
-``Measurement of the W and Z Production Cross Sections at Mid-rapidity in Proton-Proton Collisions at $\sqrt{s} = 500$~GeV in Run~9,'' STAR~Note~0546.
 
 %\cite{Kang:2009bp}
 \bibitem{Kang:2009bp} 
@@ -577,6 +622,13 @@ A_{N, i} = \frac{1}{P} \frac{%
   Phys.\ Rev.\ Lett.\  {\bf 103}, 172001 (2009)
   [arXiv:0903.3629 [hep-ph]].
   %%CITATION = ARXIV:0903.3629;%%
+roton Collisions at $\sqrt{s} = 500$~GeV in Run~9,'' STAR~Note~0546.
+
+\bibitem{STAR:Wlong}
+L.~Adamczyk et al.,The STAR Collaboration, arXiv:1404.6880 [nucl-ex]
+
+\bibitem{WCrossSecRun9}
+``Measurement of the W and Z Production Cross Sections at Mid-rapidity in Proton-P
 
 \end{thebibliography}
 
