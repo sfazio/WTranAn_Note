@@ -88,13 +88,14 @@ The present analysis is based on a data sample collected in the year 2011 at STA
 
 
 \section{The $W^{\pm}$ selection}
+\label{Wselection}
 A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T}$ electron and a hadronic recoil with a total $P_{T}$ sufficiently large. The selection criteria are the following:
 %$P_{T} > 25$~GeV electron and a total recoil $P_{T} >18$~GeV.
 
 \begin{itemize}
 \item One isolated electron
     \begin{itemize}
-    \item$P_{T}>25$~GeV.
+    \item lepton-$P_{T}>25$~GeV.
     \item Track-$|\eta|<1$
     \item Isolation criterium: $P^{track}+P^{cluster}/\Sigma[P^{tracks} in R=0.7 cone]$
     \item track coming from the maximum ranked vertex
@@ -102,6 +103,9 @@ A data sample characterized by the $W$ signature has been selected, mostly requi
 \item $|Z_{vertex}| < 100$~cm; vertex rank $>$ 0    
 \end{itemize}
 
+\subsection{$P_{T}$-balance requirement}
+$P_{T}\text{-balance} > 15$~GeV.
+ 
 \subsection{Transverse momentum reconstruction}
 In order to fully reconstruct the $W$ kinematics the momenta of all $W$ decay
 products must be measured. The momentum of the neutrino produced in the leptonically decayed $W$
@@ -144,7 +148,7 @@ A MC test shows that after the correction has been applied, data are in a very g
     \item[--] $P_{T}$ of each single track in the recoil $> 0.2$~GeV. 
 \end{itemize}
 Figure~\ref{fig:plot_DataMc_WpPt_PtRecoil} shows how the data/MC agreements improves requiring a minimum recoil-$P_{T}$ value of 0.5~GeV compared with a lower or no threshold.
-The final data/MC agreement for reconstructing the $W$ boson transverse momentum over an extended range is  shown in fig.~\ref{fig:plot_DataMc_WpPt}.
+The final data/MC agreement for reconstructing the $W$ boson transverse momentum over an extended range is  shown in fig.~\ref{fig:plot_DataMc_Wp}($left$).
 
 
 \begin{figure}[htbp]
@@ -172,14 +176,6 @@ The final data/MC agreement for reconstructing the $W$ boson transverse momentum
 \end{center}
 \caption{Data/MC agreement for the total recoil-$P_{T}$ with a minimum value of $P_{T}>0.2$~GeV ({\it left}), $P_{T}>0.3$~GeV ({\it center}) and $P_{T}>0.5$~GeV ({\it right}).}
 \label{fig:plot_DataMc_WpPt_PtRecoil}
-\end{figure}
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.4]{images/plot_DataMc_WpPt}
-\end{center}
-\caption{Data/MC agreement for the total recoil-$P_{T}$ with a minimum value of $P_{T}>0.5$~GeV and a minimum single track-$P_{T} > 0.2$~GeV.}
-\label{fig:plot_DataMc_WpPt} 
 \end{figure}
 
 \subsection{Longitudinal momentum reconstruction}
@@ -210,9 +206,19 @@ Thus, we investigated the fraction of well reconstructed events in bins of  gene
 \end{figure}
 
 It is evident that the first solution better reconstructs  $P^{W}_{L}<40$~GeV whereas the second solution works better for larger longitudinal momenta.  
-Having in mind that our $W$ bosons are often produced with a longitudinal momentum smaller than 40~GeV, we chose the solution smaller in magnitude, namely the first solution, to reconstruct the boson kinematics because it leads to a much smaller fraction of mis-reconstructed events in our kinematic domain.
+Having in mind that our $W$ bosons are often produced with a longitudinal momentum smaller than 40~GeV, we chose the solution smaller in magnitude, namely the first solution, to reconstruct the boson kinematics because it leads to a much smaller fraction of mis-reconstructed events in our kinematic domain. A data/MC comparison for the $P^{W}_{L}$ after all the reconstruction is done, is shown in Fig.~\ref{fig:plot_DataMc_Wp}($right$). One can see how the momentum of the produced $W$ boson can be fully reconstructed with a satisfactory data/MC agreement. 
 
 %Background sources coming from $W^{\pm}\rightarrow \tau^{\pm} \nu_{\tau}$, $Z^{0} \rightarrow e^{+}e^{-}$ and QCD events have been estimated to be contained within maximum a few percent of the selected sample.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.4]{images/DataMC/plot_DataMc_WpPt}
+\includegraphics[scale=0.4]{images/DataMC/plot_DataMc_WpPz}
+\end{center}
+\caption{Data/MC agreement for the W boson $P_{T}$ ($left$) and $P_{L}$ ($right$).}
+\label{fig:plot_DataMc_Wp} 
+\end{figure}
+
 
 \subsection{Background estimation}
 
@@ -246,7 +252,36 @@ B/S & 1.88\% ($W^{+}$); 1.39\% ($W^{-}$)&  0.88\% ($W^{+}$); 2.94\% ($W^{-}$)& 1
 \label{Tab:BoS}
 \end{table}
 
-The case of background coming from QCD events is more peculiar since we canon trust the luminosity given by the MC generator. In estimating the background from this source, we used a ``data-driven'' technique already used at STAR for the $W$ decay analysis with longitudinal beam polarization~\cite{STAR:Wlong}. 
+The case of background coming from QCD events is more peculiar since we canon trust the luminosity given by the MC generator. In estimating the background from this source, we used a ``data-driven'' technique already used at STAR for the $W$ decay analysis with longitudinal beam polarization~\cite{STAR:Wlong}. The procedure is the following:
+
+\begin{enumerate}
+   \item a QCD dominated data sample was selected reversing the $P_{T}$-balance cut ($P_{T}\text{-balance} < 15$~GeV);
+   \item the lepton-$P_{T}$ requirement in our $W$ boson selection (see Sec.~\ref{Wselection}) was lowered to  lepton-$P_{T} > 15$~GeV;
+   \item the QCD data sample was normalized to the first lepton-$P_{T}$ bin [15-19~GeV] as shown in Fig.~\ref{fig:plot_QCD_bkd_pt15}({\it left column}), under the assumption that this bin is dominated by QCD events with only a negligible contribution from weak boson production events;
+   \item the normalized QCD sample was then compared with out signal sample after the lepton-$P_{T}$ cut has been put back to its original value (lepton-$P_{T} > 25$~GeV), as shown if Fig.~\ref{fig:plot_QCD_bkd_pt25}({\it left column}). 
+\end{enumerate}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{images/backgrounds/plot_4c-1}
+\includegraphics[scale=0.8]{images/backgrounds/plot_6c-1}
+\end{center}
+\caption{Here goes a caption.}
+\label{fig:plot_QCD_bkd_pt15} 
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{images/backgrounds/plot_5}
+\includegraphics[scale=0.8]{images/backgrounds/plot_7}
+\end{center}
+\caption{Here goes a caption.}
+\label{fig:plot_QCD_bkd_pt25} 
+\end{figure}
+
+The estimated fraction of QCD background over signal is shown in Table~\ref{Tab:BoS}({\it last column} for the $W^{+}$ and $W^{-}$ data sample separately. 
+
+From Tab.~\ref{Tab:BoS} one can see that background sources are under control in the present analysis, the the level of background over signal contained within a few percent. Figure~\ref{fig:plot_QCD_bkd_pt25}({\it right column}) shows how the leptonic $P_{T}$ peak looks like after the background sources are statistically subtracted from the data sample.
 
 \section{asymmetry measurement}
 %For the $A_{N}$ measurement we are interested in the interaction
