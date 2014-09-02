@@ -86,6 +86,81 @@ The present analysis is based on a data sample collected in the year 2011 at STA
 
 %}}}
 
+\section{Preliminary Sensitivity Studies}
+%{{{
+
+In 2011 transversely polarized proton-proton beams were brought into collisions
+at STAR with a center of mass energy of $500~GeV$. In this regime the $W$ is
+expected to have a relatively small $P_T$. 
+%as confirmed by a Monte-Carlo simulation in Figure~\ref{fig:MC_W_Pt}. 
+We use PYTHIA~6.8 to
+simulate $W^\pm \to e^\pm \nu_e$ to the LO with unpolarized beams. Expected
+kinematic distributions of the lepton coming from the $W$ decay is shown in
+Figure~\ref{fig:MC_W_eta}.
+
+%\begin{figure}[tbh]
+%\begin{center}
+%\includegraphics[width=10cm]{images/W_Pt}
+%\end{center}
+%\caption{Expected distribution of the transverse momentum of the produced W boson, $P^W_T$.}
+%\label{fig:MC_W_Pt} 
+%\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm]{images/W_rapidity}
+\end{center}
+\caption{W-mass; polar angles and pseudo rapidity distributions of the produced W, the decay leptons and the recoil tracks.}
+\label{fig:MC_W_eta} 
+\end{figure}
+
+Most of the recoil tracks in the BARREL region are expected to carry a very
+small fraction of the energy as shown in fig.~\ref{fig:MC_recoil_Efrac}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=0.25\textheight]{images/recoil_energy_frac.eps}
+\caption{Expected fraction of energy carried by recoil particles within the BARREL region ($|\eta|<1$).}
+\label{fig:MC_recoil_Efrac} 
+\end{figure}
+
+We can use MC to correct for the missing $P_{T}$ in the recoil tracks due to
+the limited acceptance of the STAR detector. \textit{Such a procedure will
+introduce a model-dependent systematic which has to be accounted for.} 
+%which will grow with the value of the correction.}
+
+%We estimate the statistical power of the $A_N$ measurement for an integrated
+%luminosity of $300~\text{pb}^{-1}$. As a basis we use the total $W^\pm$ and
+%$Z^0$ yields observed at STAR in Run 9. The $W$ and $Z$ candidate events,
+%$N_\text{obs}$, along with the backgound numbers, $N_\text{bkg}$, are borrowed
+%from the earlier STAR analysis~\cite{WCrossSecRun9} that reported the production
+%cross section using $\approx 13~\text{pb}^{-1}$ of inegrated luminosity:
+
+%\begin{align*}
+%N_{W^+} &= 496 - 37 = 459,\\
+%N_{W^-} &= 148 - 26 = 125,\\
+%N_Z &= 13 - 0 = 13.
+%\end{align*}
+
+%To reflect the expected increase in the integrated luminosity we scale the
+%above numbers a factor $\approx 23$. In order to illustrate the sensitivity of
+%the future measurement to the non-vanishing $W$ and $Z$ $A_N$ we calculate the
+%relative yields in bins of the boson rapidity from the MC sample. The expected
+%statistical power of $A_N$ in bins of $W$ rapidity is shown in
+%Figure~\ref{fig:MC_Wmeas_stat} for $W^+$ and $W^-$ respectively compared with
+%theoretical prediction from~\cite{Kang:2009bp}.
+
+%\begin{figure}
+%\subfloat[$W^+$]{\includegraphics[width=0.49\textwidth]{images/anapow_w_plus} \label{fig:MC_Wmeas_stat_plus} }
+%\subfloat[$W^-$]{\includegraphics[width=0.49\textwidth]{images/anapow_w_minus}\label{fig:MC_Wmeas_stat_minus}}
+%\caption[]{Expected statistical uncertainties for measured asymmetry $A_N$ of
+%$W^+$ \subref{fig:MC_Wmeas_stat_plus} and $W^-$ \subref{fig:MC_Wmeas_stat_minus}
+%decaying leptonically at STAR as a function of the boson's rapidity.}
+%\label{fig:MC_Wmeas_stat} 
+%\end{figure}
+
+%}}}
+
 
 \section{The $W^{\pm}$ selection}
 \label{Wselection}
@@ -109,7 +184,7 @@ $P_{T}\text{-balance} > 15$~GeV.
 \subsection{Transverse momentum reconstruction}
 In order to fully reconstruct the $W$ kinematics the momenta of all $W$ decay
 products must be measured. The momentum of the neutrino produced in the leptonically decayed $W$
-cannot be measured and can only be indirectly deduced from conservation of the total momentum. 
+cannot be measured and can only be indirectly deduced from momentum conservation. 
 in the $W$ events produced at $\sqrt{s}=500$~GeV
 at STAR we can assume that most of the missing energy, $\missET$ is carried by the neutrino from the
 $W$ decay. The assumption ${P}_{\nu, T} \approx \missET$ is based on the
@@ -185,7 +260,24 @@ Knowing its transverse momentum, the longitudinal component of the neutrino's mo
 \label{eq_InvMass}
 M^{2}_{W}=(E_{e}+E_{\nu})^{2} - (\vv P_{e}+\vv P_{\nu})^{2},
 \end{equation}
-where we assumed the nominal value of the $W$-mass.  Eq.~\ref{eq_InvMass} leads to two possible solutions for $P_{L}^{\nu}$. To distinguish between the two solutions, from now on we name ``first solution'' the one with the smaller absolute value and ``second solution'' the remnant one. In order to choose which solution should be used, the fraction of correctly reconstructed events for each solution was estimated via MC. The MC distribution of the reconstructed $P^{W}_{L}$ versus the generated level one is shown in Fig.~\ref{fig:plot_hRecoVsWBosonPz}  for both solutions separately. To estimate the amount of ``well reconstructed'' events we considered all the events with a reconstructed longitudinal moments within 30~GeV from the generated value (the to black limit-lines in  Fig.~\ref{fig:plot_hRecoVsWBosonPz}). The overall fraction of well reconstructed events, estimated according to this criterium, is shown for both solutions separately in the upper side of each plot in Fig.~\ref{fig:plot_hRecoVsWBosonPz}.
+which leads to
+\begin{equation}
+M^2_W/2 = \abs{\vec{p}_l} \abs{\vec{p}_\nu} - \vec{p}_{l,T} \cdot \vec{p}_{\nu,T} - \vec{p}_{l,z} \cdot \vec{p}_{\nu,z},
+\end{equation}
+where we neglected the masses of the both neutino and lepton. Introducing a
+shorthand expression for $A = M^2_W/2 + \vec{p}_{l,T} \cdot \vec{p}_{\nu,T}$,
+after trivial arithmetics we arrive to a quadratic equation %for $p_{\nu,z}$
+
+\begin{align}
+\abs{\vec{p}_{l,T}}^2 p^2_{\nu,z} - 2A p_{l,z} p_{\nu,z} + \abs{\vec{p}_{\nu,T}}^2 \abs{\vec{p}_{l}}^2 - A^2 = 0.
+\end{align}
+
+In solving this equation we assumed the nominal value of the $W$-mass.  Thus, Eq.~\ref{eq_InvMass} leads to two possible solutions for the longitudinal component of the neutrino (and thus the $W$) momentum
+\begin{align}
+p_{\nu,z} = \frac{ A p_{l,z} \pm \sqrt{ A^2 p^2_{l,z} - \abs{\vec{p}_{l,T}}^2 (\abs{\vec{p}_{\nu,T}}^2 \abs{\vec{p}_{l}}^2 - A^2) } }{\abs{\vec{p}_{l,T}}^2}.
+\end{align}
+
+To distinguish between the two solutions, from now on we name ``first solution'' the one with the smaller absolute value and ``second solution'' the remnant one. In order to choose which solution should be used, the fraction of correctly reconstructed events for each solution was estimated via MC. The MC distribution of the reconstructed $P^{W}_{L}$ versus the generated level one is shown in Fig.~\ref{fig:plot_hRecoVsWBosonPz}  for both solutions separately. To estimate the amount of ``well reconstructed'' events we considered all the events with a reconstructed longitudinal moments within 30~GeV from the generated value (the to black limit-lines in  Fig.~\ref{fig:plot_hRecoVsWBosonPz}). The overall fraction of well reconstructed events, estimated according to this criterium, is shown for both solutions separately in the upper side of each plot in Fig.~\ref{fig:plot_hRecoVsWBosonPz}.
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.4]{images/P_long_study/hRecoVsWBosonPz_FirstSol}
@@ -380,137 +472,6 @@ luminosity, unpolarized cross section, and efficiencies. These values are
 needed to calculate the expected number of events using \eqref{eq:yield}. The
 two methods are expected to give consistent results. However, the difference
 can be more perceptible when systematic effects are taken into account.
-
-%}}}
-
-
-\section{Reconstruction of $W$ Kinematics}
-%{{{
-
-In order to fully reconstruct the $W$ kinematics the momenta of all $W$ decay
-products must be measured. The neutrino produced in the leptonically decayed $W$
-cannot be measured in our detector. The momentum of the neutrino can only be
-indirectly deduced from conservation of the total momentum. In the transverse
-plane the initial momentum of the system of interacting partons is negligible
-and so must be the vector sum of all final particles momenta. We define the
-missing transverse energy as a vector restoring the balance in the event:
-
-\begin{equation}
-\missET = - \sum_{i \in \parbox[t]{\widthof{\tiny clusters}}{\tiny jets, tracks, clusters}} \vv P_{i,T}.
-\end{equation}
-
-In a typical collider detector like STAR the problem with measuring the
-longitudinal component of the missing energy is that the total particle momentum
-along the beam direction is not measured due to particles with very high
-rapidities escape the detector. However, in the $W$ events produced at 250~GeV
-at STAR we can assume that most of the $\missET$ is due to the neutrino from the
-$W$ decay. The assumption $\vec{p}_{\nu, T} \approx \missET$ is based on the
-fact that only very little energy is left for anything other than $W$ production
-from the primary hard scattering. At the same time, the beam remnants with high
-longitudinal momentum carry away only a little portion of the total transverse
-momentum. With an assumption that the boson is produced with mass $M_W$ we can
-reconstruct the $z$ component of the neutrino's momentum. For the invariant mass
-we have:
-
-\begin{align}
-M^2_W &= (E_l + E_\nu)^2 - (\vec{p}_l + \vec{p}_\nu)^2,\\
-M^2_W/2 &= \abs{\vec{p}_l} \abs{\vec{p}_\nu} - \vec{p}_{l,T} \cdot \vec{p}_{\nu,T} - \vec{p}_{l,z} \cdot \vec{p}_{\nu,z},
-\end{align}
-
-\noindent
-where we neglected the masses of the both neutino and lepton. Introducing a
-shorthand expression for $A = M^2_W/2 + \vec{p}_{l,T} \cdot \vec{p}_{\nu,T}$,
-after trivial arithmetics we arrive to a quadratic equation for $p_{\nu,z}$:
-
-\begin{align}
-\abs{\vec{p}_{l,T}}^2 p^2_{\nu,z} - 2A p_{l,z} p_{\nu,z} + \abs{\vec{p}_{\nu,T}}^2 \abs{\vec{p}_{l}}^2 - A^2 = 0.
-\end{align}
-
-This equation has two solutions:
-
-\begin{align}
-p_{\nu,z} = \frac{ A p_{l,z} \pm \sqrt{ A^2 p^2_{l,z} - \abs{\vec{p}_{l,T}}^2 (\abs{\vec{p}_{\nu,T}}^2 \abs{\vec{p}_{l}}^2 - A^2) } }{\abs{\vec{p}_{l,T}}^2}
-\end{align}
-
-%}}}
-
-
-\section{Preliminary Sensitivity Studies}
-%{{{
-
-In 2011 transversely polarized proton-proton beams were brought into collisions
-at STAR with a center of mass energy of $500~GeV$. In this regime the $W$ is
-expected to have a relatively small $P_T \sim 2$~GeV as confirmed by a
-Monte-Carlo simulation in Figure~\ref{fig:MC_W_Pt}. We use PYTHIA~6.8 to
-simulate $W^\pm \to e^\pm \nu_e$ to the LO with unpolarized beams. Expected
-kinematic distributions of the lepton coming from the $W$ decay is shown in
-Figure~\ref{fig:MC_W_eta}.
-
-\begin{figure}[tbh]
-\begin{center}
-\includegraphics[width=10cm]{images/W_Pt}
-\end{center}
-\caption{Expected distribution of the transverse momentum of the produced W boson, $P^W_T$.}
-\label{fig:MC_W_Pt} 
-\end{figure}
-
-\begin{figure}[tbh]
-\begin{center}
-\includegraphics[width=14cm]{images/W_rapidity}
-\end{center}
-\caption{W-mass; polar angles and pseudo rapidity distributions of the produced W, the decay leptons and the recoil tracks.}
-\label{fig:MC_W_eta} 
-\end{figure}
-
-Most of the recoil tracks in the BARREL region are expected to carry a very
-small fraction of the energy as shown in fig.~\ref{fig:MC_recoil_Efrac}.
-
-\begin{figure}
-\centering
-\includegraphics[height=0.5\textheight]{images/recoil_energy_frac.eps}
-\caption{Expected fraction of energy carried by recoil particles within the BARREL region ($|\eta|<1$).}
-\label{fig:MC_recoil_Efrac} 
-\end{figure}
-
-We can use MC to correct for the missing $P_{T}$ in the recoil tracks due to
-the limited acceptance of the STAR detector. \textit{Such a procedure will
-introduce a model-dependent systematic which will grow with the value of the
-correction.}
-%Nevertheless values of the corrections up to 30-40\% are considered acceptable...
-
-We estimate the statistical power of the $A_N$ measurement for an integrated
-luminosity of $300~\text{pb}^{-1}$. As a basis we use the total $W^\pm$ and
-$Z^0$ yields observed at STAR in Run 9. The $W$ and $Z$ candidate events,
-$N_\text{obs}$, along with the backgound numbers, $N_\text{bkg}$, are borrowed
-from the earlier STAR analysis~\cite{WCrossSecRun9} that reported the production
-cross section using $\approx 13~\text{pb}^{-1}$ of inegrated luminosity:
-%
-%$N_{W/Z} = N_\text{obs} - N_\text{bkg}$
-
-\begin{align*}
-N_{W^+} &= 496 - 37 = 459,\\
-N_{W^-} &= 148 - 26 = 125,\\
-N_Z &= 13 - 0 = 13.
-\end{align*}
-
-To reflect the expected increase in the integrated luminosity we scale the
-above numbers a factor $\approx 23$. In order to illustrate the sensitivity of
-the future measurement to the non-vanishing $W$ and $Z$ $A_N$ we calculate the
-relative yields in bins of the boson rapidity from the MC sample. The expected
-statistical power of $A_N$ in bins of $W$ rapidity is shown in
-Figure~\ref{fig:MC_Wmeas_stat} for $W^+$ and $W^-$ respectively compared with
-theoretical prediction from~\cite{Kang:2009bp}.
-
-\begin{figure}
-\subfloat[$W^+$]{\includegraphics[width=0.49\textwidth]{images/anapow_w_plus} \label{fig:MC_Wmeas_stat_plus} }
-\subfloat[$W^-$]{\includegraphics[width=0.49\textwidth]{images/anapow_w_minus}\label{fig:MC_Wmeas_stat_minus}}
-
-\caption[]{Expected statistical uncertainties for measured asymmetry $A_N$ of
-$W^+$ \subref{fig:MC_Wmeas_stat_plus} and $W^-$ \subref{fig:MC_Wmeas_stat_minus}
-decaying leptonically at STAR as a function of the boson's rapidity.}
-
-\label{fig:MC_Wmeas_stat} 
-\end{figure}
 
 %}}}
 
