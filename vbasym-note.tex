@@ -12,6 +12,7 @@
 \usepackage[d]{esvect}
 \usepackage{calc}
 \usepackage[colorlinks=false,bookmarks=false,pageanchor=true]{hyperref}
+\usepackage{cite}
 
 \newcommand{\missET}{\vv{\not{\!\!E}}_T}
 \newcommand{\abs}[1]{\lvert#1\rvert}
@@ -164,24 +165,37 @@ introduce a model-dependent systematic which has to be accounted for.}
 
 \section{The $W^{\pm}$ selection}
 \label{Wselection}
-A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T}$ electron and a hadronic recoil with a total $P_{T}$ sufficiently large. The selection criteria are the following:
-%$P_{T} > 25$~GeV electron and a total recoil $P_{T} >18$~GeV.
+A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T}$ electron and a hadronic recoil with a total $P_{T}$ sufficiently large. We adopt the same selection procedure already used (and described in details) at STAR for weak boson production measurements of polarized longitudinal single-spin asymmetry\cite{STAR_W_AL_2009-paper, STAR_W_AL_2009-note, STAR_W_AL_2012-paper, STAR_W_AL_2012-note} and unpolarized cross section\cite{STAR_W_xSec_2009-paper,STAR_W_xSec_2009-note}. The selection criteria are the following
 
 \begin{itemize}
 \item One isolated electron
     \begin{itemize}
-    \item lepton-$P_{T}>25$~GeV.
-    \item Track-$|\eta|<1$
-    \item Isolation criterium: $P^{track}+P^{cluster}/\Sigma[P^{tracks} in R=0.7 cone]$
-    \item track coming from the maximum ranked vertex
+    \item lepton-$P_{T}>25$~GeV;
+    \item Track-$|\eta|<1$;
+    \item Isolation criterium: $(P^{track}+E^{cluster})/\Sigma[P^{tracks}~\text{in R=0.7 cone]} > 0.8$;
+    \item track coming from the maximum ranked vertex;
     \end{itemize}
-\item $|Z_{vertex}| < 100$~cm; vertex rank $>$ 0    
+\item $|Z_{vertex}| < 100$~cm; vertex rank $>$ 0;    
+\item $P_{T}\text{-balance} > 15$~GeV, rejects QCD back ground;
+\item $0.4 < |\text{Charge(TPC)}*E_{T}\text{(EMC)}/P_{T}\text{(TPC)}| < 1.8$, minimizes charge misidentification.
 \end{itemize}
 
-\subsection{$P_{T}$-balance requirement}
-$P_{T}\text{-balance} > 15$~GeV.
+%In the present analysis we also add additional criteria to minimize the systematics uncertainties in reconstructing the $W$ boson transverse momentum as described in Sec.~\ref{PT-reconstruction}
+
+%\begin{itemize}
+%\item Total recoil-$P_{T} > 0.5$~GeV; 
+%\item $P_{T}$ of each single track in the recoil $> 0.2$~GeV. 
+%\end{itemize}
+At the end we can identify two data samples depending on the electron charge; a positive charge identifies our $W^{+}$ signal whereas a negative charge marks our $W^{-}$ signal. At the end of the whole election procedure, the following events survive
+\begin{itemize}
+\item[--] positive-charged electron ($W^{+}$ signal): 1216 events;
+\item[--] negative-charged electron ($W^{-}$ signal): 332 events.
+\end{itemize}
+
+%\subsection{$P_{T}$-balance requirement}
+%$P_{T}\text{-balance} > 15$~GeV.
  
-\subsection{Transverse momentum reconstruction}
+\subsection{Transverse momentum reconstruction} \label{PT-reconstruction}
 In order to fully reconstruct the $W$ kinematics the momenta of all $W$ decay
 products must be measured. The momentum of the neutrino produced in the leptonically decayed $W$
 cannot be measured and can only be indirectly deduced from momentum conservation. 
@@ -445,33 +459,33 @@ A^\text{sig}_N = \frac{A_N + f_B A^B_N}{1 - f_B}
 %}}}
 
 
-\section{Sivers Sign Change Extraction}
+%\section{Sivers Sign Change Extraction}
 %{{{
 
-A binned likelihood method can be used to check the sensitivity of our data to
-the sign of the Sivers function. A direct way of doing this is to compare the
-measured asymmetry \eqref{eq:asym_sqrt} with background corrected expectations
-from \eqref{eq:asym_bkg}. The signal asymmetry $A^\text{sig}_N$ in this case
-directly comes from the model predictions~\eqref{eq:asym_wboson} or
-\eqref{eq:asym_lepton}. The simplest likelihood function can be constructed as a
-product of gaussian terms over all bins:
+%A binned likelihood method can be used to check the sensitivity of our data to
+%the sign of the Sivers function. A direct way of doing this is to compare the
+%measured asymmetry \eqref{eq:asym_sqrt} with background corrected expectations
+%from \eqref{eq:asym_bkg}. The signal asymmetry $A^\text{sig}_N$ in this case
+%directly comes from the model predictions~\eqref{eq:asym_wboson} or
+%\eqref{eq:asym_lepton}. The simplest likelihood function can be constructed as a
+%product of gaussian terms over all bins:
 %
-\begin{equation}
-L = \prod\limits_i G(A_{N,i}, \sigma_{A_{N,i}}; A^\text{sig}_{N,i}).
-\end{equation}
+%\begin{equation}
+%L = \prod\limits_i G(A_{N,i}, \sigma_{A_{N,i}}; A^\text{sig}_{N,i}).
+%\end{equation}
 %
-Alternatively, the Sivers sign can be extracted from the Poisson probabilities
-of measured given the expected yields.
+%Alternatively, the Sivers sign can be extracted from the Poisson probabilities
+%of measured given the expected yields.
 %
-\begin{equation}
-L = \prod\limits_{i,\uparrow,\downarrow} P(N_i; N^\text{sig}_{i} + B_i).
-\end{equation}
+%\begin{equation}
+%L = \prod\limits_{i,\uparrow,\downarrow} P(N_i; N^\text{sig}_{i} + B_i).
+%\end{equation}
 %
-While this method is more ``classic'' it requires the explicit knowledge of
-luminosity, unpolarized cross section, and efficiencies. These values are
-needed to calculate the expected number of events using \eqref{eq:yield}. The
-two methods are expected to give consistent results. However, the difference
-can be more perceptible when systematic effects are taken into account.
+%While this method is more ``classic'' it requires the explicit knowledge of
+%luminosity, unpolarized cross section, and efficiencies. These values are
+%needed to calculate the expected number of events using \eqref{eq:yield}. The
+%two methods are expected to give consistent results. However, the difference
+%can be more perceptible when systematic effects are taken into account.
 
 %}}}
 
@@ -617,8 +631,30 @@ A_{N, i} = \frac{1}{P} \frac{%
   ``Testing the Time-Reversal Modified Universality of the Sivers Function,''
   Phys.\ Rev.\ Lett.\  {\bf 103}, 172001 (2009)
   [arXiv:0903.3629 [hep-ph]].
-  %%CITATION = ARXIV:0903.3629;%%
-roton Collisions at $\sqrt{s} = 500$~GeV in Run~9,'' STAR~Note~0546.
+
+\bibitem{STAR_W_AL_2009-paper}
+M. Aggarwal et al. (STAR), Measurement of the parity-violating longitudinal single-spin asymmetryfor $W^{\pm}$ boson production in polarized proton-proton collisions at $\sqrt{s} = 500$~GeV, 
+Phys. Rev. Lett.106, 062002 (2011), 
+arXiv:1009.0326 [hep-ex].
+
+\bibitem{STAR_W_AL_2009-note}J. Balewski, J. Seele, J. Stevens, and O. Grebenyuk, Measurement of the parity-violating longitu-dinal single-spin asymmetry $A_{L}$ for $W^{+}$ and $W^{-}$ boson production in polarized $\vec{p} + p$ collisions at$\sqrt{s}=500$~GeV in Run 9 (STAR Note \# 516), (2010).
+
+\bibitem{STAR_W_AL_2012-paper}
+L. Adamczyk et al. (STAR), Measurement of longitudinal spin asymmetries for weak boson production in polarized proton-proton collisions at RHIC, 
+Phys.Rev.Lett. 113 (2014) 072301, 
+arXiv:1404.6880 [nucl-ex]
+
+\bibitem{STAR_W_AL_2012-note}J. Balewski, J. Stevens, and J. Zhang, Measurement of the parity-violating longitudinal single-spinasymmetry for weak boson production in polarized proton-proton collisions in Run 11 + 12 at$\sqrt{s} = 510$~GeV (STAR Note \# 597), (2013).
+
+\bibitem{STAR_W_xSec_2009-paper}
+L. Adamczyk et al. (STAR), Measurement of the $W\rightarrow e\nu$ and $Z^{0}/\gamma^{*}\rightarrow e^{+}e^{-}$ 
+production cross sections at mid-rapidity in proton-proton collisions at$\sqrt{s} = 500$~GeV, 
+Phys. Rev. D85, 092010 (2012), 
+arXiv:1112.2980 [hep-ex].
+
+\bibitem{STAR_W_xSec_2009-note}
+J. Stevens, Measurement of the $W\rightarrow e\nu$ and $Z^{0}/\gamma^{*}\rightarrow e^{+}e^{-}$  
+Production Cross Sections at Mid-rapidity in Proton-Proton Collisions at$\sqrt{s}=500$~GeV in Run 9 (STAR Note \# 546), (2011).
 
 \bibitem{STAR:Wlong}
 L.~Adamczyk et al.,The STAR Collaboration, arXiv:1404.6880 [nucl-ex]
