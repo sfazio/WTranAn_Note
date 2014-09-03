@@ -13,6 +13,36 @@
 \usepackage{calc}
 \usepackage[colorlinks=false,bookmarks=false,pageanchor=true]{hyperref}
 \usepackage{cite}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\lstset{ %
+ % backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+ % basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+ % breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+ breaklines=true,                 % sets automatic line breaking
+ % captionpos=b,                    % sets the caption-position to bottom
+ % commentstyle=\color{mygreen},    % comment style
+ % deletekeywords={...},            % if you want to delete keywords from the given language
+ % escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+ % extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+ frame=single,                    % adds a frame around the code
+ keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+ % keywordstyle=\color{blue},       % keyword style
+ % language=Octave,                 % the language of the code
+ % morekeywords={*,...},            % if you want to add more keywords to the set
+ % numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+ % numbersep=5pt,                   % how far the line-numbers are from the code
+ % numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+ % rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+ % showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+ % showstringspaces=false,          % underline spaces within strings only
+ % showtabs=false,                  % show tabs within strings adding particular underscores
+ % stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+%  stringstyle=\color{mymauve},     % string literal style
+%  tabsize=2,                       % sets default tabsize to 2 spaces
+%  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
 
 \newcommand{\missET}{\vv{\not{\!\!E}}_T}
 \newcommand{\abs}[1]{\lvert#1\rvert}
@@ -126,15 +156,16 @@ small fraction of the energy as shown in fig.~\ref{fig:MC_recoil_Efrac}.
 \end{figure}
 
 We can use MC to correct for the missing $P_{T}$ in the recoil tracks due to
-the limited acceptance of the STAR detector. \textit{Such a procedure will
-introduce a model-dependent systematic which has to be accounted for.} 
+the limited acceptance of the STAR detector. 
+%\textit{Such a procedure will
+%introduce a model-dependent systematic which has to be accounted for.} 
 %which will grow with the value of the correction.}
 
 %We estimate the statistical power of the $A_N$ measurement for an integrated
 %luminosity of $300~\text{pb}^{-1}$. As a basis we use the total $W^\pm$ and
 %$Z^0$ yields observed at STAR in Run 9. The $W$ and $Z$ candidate events,
 %$N_\text{obs}$, along with the backgound numbers, $N_\text{bkg}$, are borrowed
-%from the earlier STAR analysis~\cite{WCrossSecRun9} that reported the production
+%from the earlier STAR analysis~\cite{STAR_W_AL_2009-paper} that reported the production
 %cross section using $\approx 13~\text{pb}^{-1}$ of inegrated luminosity:
 
 %\begin{align*}
@@ -163,7 +194,7 @@ introduce a model-dependent systematic which has to be accounted for.}
 %}}}
 
 
-\section{The $W^{\pm}$ selection}
+\section{The $W^{\pm}$ selection and reconstruction}
 \label{Wselection}
 A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T}$ electron and a hadronic recoil with a total $P_{T}$ sufficiently large. We adopt the same selection procedure already used (and described in details) at STAR for weak boson production measurements of polarized longitudinal single-spin asymmetry\cite{STAR_W_AL_2009-paper, STAR_W_AL_2009-note, STAR_W_AL_2012-paper, STAR_W_AL_2012-note} and unpolarized cross section\cite{STAR_W_xSec_2009-paper,STAR_W_xSec_2009-note}. The selection criteria are the following
 
@@ -244,7 +275,7 @@ The final data/MC agreement for reconstructing the $W$ boson transverse momentum
 \begin{center}
 \includegraphics[scale=0.8]{images/plot_PtCorrFactor}
 \end{center}
-\caption{Here goes a caption.}
+\caption{Distribution of the correction factor, $k$, versus the recoil $P_{T}$.}
 \label{fig:plot_PtCorrFactor} 
 \end{figure}
 
@@ -253,7 +284,7 @@ The final data/MC agreement for reconstructing the $W$ boson transverse momentum
 \includegraphics[scale=0.4]{images/plot_PtCorr}
 \includegraphics[scale=0.4]{images/plot_PtCorr2}
 \end{center}
-\caption{Here goes a caption.}
+\caption{Data before and after the $P_{T}$ correction has been applied are compared with predictions from RhicBOS ({\it left}) and PYTHIA ({\it right}).}
 \label{fig:plot_PtCorr} 
 \end{figure}
 
@@ -328,20 +359,40 @@ Having in mind that our $W$ bosons are often produced with a longitudinal moment
 
 \subsection{Background estimation}
 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.43]{images/backgrounds/plot_4}
+\includegraphics[scale=0.43]{images/backgrounds/plot_6}
+\end{center}
+\caption{Estimated contribution from the $Z^{0} \rightarrow e^+e^-$ and $W^{\pm} \rightarrow \tau\nu \rightarrow e^+e^-\nu$ backgrounds is shown for the $W^{+}$ ({\it left}) and the $W^{-}$ ({\it right}) data samples respectively.}
+\label{fig:plot_WZ_backgrounds} 
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{images/backgrounds/plot_4c-1}
+\includegraphics[scale=0.8]{images/backgrounds/plot_6c-1}
+\end{center}
+\caption{Estimated contribution from the QCD background is shown for the $W^{+}$ ({\it left}) and the $W^{-}$ ({\it right}) data samples respectively. The data-drive QCD sample has been normalized to the lowest lepton-$P_{T}$ bin.}
+\label{fig:plot_QCD_bkd_pt15} 
+\end{figure}
+
 The background sources considered in this analysis are: 
 $Z^{0} \rightarrow e^+e^-$; 
 $W^{\pm} \rightarrow \tau\nu \rightarrow e^+e^-\nu$; 
 QCD events decaying into leptons, 
 where one of the final leptons is not detected.
-The first two sources have been evaluated using MC samples simulated with PYTHIA 6.4 using the ``Perugia tune'' and setting $k_{T}=2$ and $ckin(3)=10$. The MC samples passed trough the GEANT 3 simulation of the STAR detector using the SL11d libraries and embedded to the run11 p+p transverse zero-bias events. To estimate the contribution from the background, the MC samples have been normalized to the data according to the luminosity and the is contribution is shown in Fig.~\ref{fig:plot_WZ_backgorunds} for the $W^{+}$ (upper plot) and the $W^{-}$ (lower plot) data samples respectively. The estimated background-over-signal values for $W^{\pm} \rightarrow \tau\nu$ and $Z^{0} \rightarrow e^+e^-$ are shown in the first columns of Table~\ref{Tab:BoS}. 
+The first two sources have been evaluated using MC samples simulated with PYTHIA 6.4 using the ``Perugia tune'' and setting $k_{T}=2$ and $ckin(3)=10$. The MC samples passed trough the GEANT 3 simulation of the STAR detector using the SL11d libraries and embedded to the run11 p+p transverse zero-bias events. To estimate the contribution from the background, the MC samples have been normalized to the data according to the luminosity and the is contribution is shown in Fig.~\ref{fig:plot_WZ_backgrounds} for the $W^{+}$ (upper plot) and the $W^{-}$ (lower plot) data samples respectively. The estimated background-over-signal values for $W^{\pm} \rightarrow \tau\nu$ and $Z^{0} \rightarrow e^+e^-$ are shown in the first columns of Table~\ref{Tab:BoS}. 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.6]{images/backgrounds/plot_4}\\
-\includegraphics[scale=0.6]{images/backgrounds/plot_6}
+\includegraphics[scale=0.8]{images/backgrounds/plot_5}
+\includegraphics[scale=0.8]{images/backgrounds/plot_7}
 \end{center}
-\caption{Here goes a caption.}
-\label{fig:plot_WZ_backgorunds} 
+\caption{For the $W^{+}$ ({\it upper row}) and the $W^{-}$ ({\it lower row}) data samples, figure shows the estimated contribution from the $Z^{0} \rightarrow e^+e^-$, $W^{\pm} \rightarrow \tau\nu \rightarrow e^+e^-\nu$ and QCD backgrounds ({\it left column}), and the leptonic $P_{T}$ peak after the background sources are statistically subtracted from the data sample ({\it right column}).}
+\label{fig:plot_QCD_bkd_pt25} 
 \end{figure}
 
 % Table of backgrounds
@@ -358,7 +409,7 @@ B/S & 1.88\% ($W^{+}$); 1.39\% ($W^{-}$)&  0.88\% ($W^{+}$); 2.94\% ($W^{-}$)& 1
 \label{Tab:BoS}
 \end{table}
 
-The case of background coming from QCD events is more peculiar since we canon trust the luminosity given by the MC generator. In estimating the background from this source, we used a ``data-driven'' technique already used at STAR for the $W$ decay analysis with longitudinal beam polarization~\cite{STAR:Wlong}. The procedure is the following:
+The case of background coming from QCD events is more peculiar since we canon trust the luminosity given by the MC generator. In estimating the background from this source, we used a ``data-driven'' technique already used at STAR for the $W$ decay analysis with longitudinal beam polarization~\cite{STAR_W_AL_2012-paper, STAR_W_AL_2012-note}. The procedure is the following:
 
 \begin{enumerate}
    \item a QCD dominated data sample was selected reversing the $P_{T}$-balance cut ($P_{T}\text{-balance} < 15$~GeV);
@@ -367,29 +418,48 @@ The case of background coming from QCD events is more peculiar since we canon tr
    \item the normalized QCD sample was then compared with out signal sample after the lepton-$P_{T}$ cut has been put back to its original value (lepton-$P_{T} > 25$~GeV), as shown if Fig.~\ref{fig:plot_QCD_bkd_pt25}({\it left column}). 
 \end{enumerate}
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.8]{images/backgrounds/plot_4c-1}
-\includegraphics[scale=0.8]{images/backgrounds/plot_6c-1}
-\end{center}
-\caption{Here goes a caption.}
-\label{fig:plot_QCD_bkd_pt15} 
-\end{figure}
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.8]{images/backgrounds/plot_5}
-\includegraphics[scale=0.8]{images/backgrounds/plot_7}
-\end{center}
-\caption{Here goes a caption.}
-\label{fig:plot_QCD_bkd_pt25} 
-\end{figure}
 
 The estimated fraction of QCD background over signal is shown in Table~\ref{Tab:BoS}({\it last column} for the $W^{+}$ and $W^{-}$ data sample separately. 
 
 From Tab.~\ref{Tab:BoS} one can see that background sources are under control in the present analysis, the the level of background over signal contained within a few percent. Figure~\ref{fig:plot_QCD_bkd_pt25}({\it right column}) shows how the leptonic $P_{T}$ peak looks like after the background sources are statistically subtracted from the data sample.
 
-\section{asymmetry measurement}
+\subsection{Systematic uncertainties} \label{Sec:Syst}
+The systematic uncertainties have been evaluated via a Monte Carlo challenge. %using a theoretical prediction for the asymmetry from~\cite{Kang:2014}.
+Since PYTHIA does not have polarization implemented, we used tables (rapidity,$P_{T}$ bins of W boson) of theoretical predictions for $A_{N}$ with evolution included, confidentially given to us by Z-B Kang and generated from~\cite{Kang:2014}. the procedure is as follows
+
+\begin{itemize}
+\item PYTHIA is used to generate samples for $W^{-}$ production (for which $A_{N}$ is predicted to be always positive);
+\item each prediction for $A_{N}$ taken from the tables has been assigned to the PYTHIA generated values of W-$y$ and W-$P_{T}$;
+\item after the Monte Carlo events are fully reconstructed we look at the distributions of $A_{N}$ in the bins of $y$ and $P_{T}$ we use for the asymmetry measurement of Sec.~\ref{Sec:W-An-measurement};
+\item the mean position of the peak in the $A_{N}$ distributions at the generated and reconstructed level, in the bins of $y$ (Fig.~\ref{fig:SysAnRap}) and $P_{T}$ (Fig.~\ref{fig:SysAnPt}), is compared. In the case of the distributions in bins of rapidity, a gaussian functional form has been fit to better estimate the position of the peak, as shown in Fig.~\ref{fig:SysAnRap}.  
+\item We evaluate the relative systematic uncertainty in the corresponding bin as
+\begin{align}
+Sys(i-bin)=\frac{|mean^{GEN}_{i-bin}-mean^{REC}_{i-bin}|}{mean^{GEN}_{i-bin}}.
+\end{align}
+\end{itemize}
+
+An additional source of common systematic normalization uncertainty on the single-spinasymmetries due to the uncertainty in the measured beam polarization has been estimated to be 3.4\%~\cite{RHIC-Pol}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.43]{images/systematics/plot_Wm_An_evol_ZK_Vs_RapGen_projs}
+\includegraphics[scale=0.43]{images/systematics/plot_Wm_An_evol_ZK_Vs_RapRec_projs}
+\end{center}
+\caption{Distribution of $A_{N}$ prediction values at the generated ({\it left}) and reconstructed ({\it right}) level for the three W-rapidity bins used in our asymmetry measurement of Sec.~\ref{Sec:W-An-measurement}.}
+\label{fig:SysAnRap} 
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.87]{images/systematics/plot_Wm_An_evol_ZK_Vs_PtGen_projs}
+\includegraphics[scale=0.85]{images/systematics/plot_Wm_An_evol_ZK_Vs_PtRec_projs}
+\end{center}
+\caption{Distribution of $A_{N}$ prediction values at the generated ({\it upper}) and reconstructed ({\it lower}) level for the seven W-$P_{T}$ bins used in our asymmetry measurement of Sec.~\ref{Sec:W-An-measurement}.}
+\label{fig:SysAnPt} 
+\end{figure}
+
+
+\section{Asymmetry measurement} \label{Sec:W-An-measurement}
 %For the $A_{N}$ measurement we are interested in the interaction
 %$p^{\uparrow/\downarrow} p \to W^\pm \to e^\pm \nu_e$ in which the spin direction of one
 %of the protons is irrelevant, \textit{i.e} unpolarized protons. 
@@ -408,7 +478,7 @@ A_N &= \frac{\sigma_\uparrow - \sigma_\downarrow}{\sigma_\uparrow +
 \end{align}
 
 We bin our data sample in three observable variables, $\{y, \phi, P_T\}$, of the produced boson. Thus, 
-we calculated $A_{N}$ using the square root formula~\cite{sqrtFormula}, which helps to cancel out unwanted effects due to geometry and luminosity.
+we calculated $A_{N}$ using the ``left-right'' method~\cite{sqrtFormula}, which helps to cancel out unwanted effects due to geometry and luminosity.
 
 \begin{align}
 A_{N } sin(\phi)= \frac{1}{<P>}
@@ -430,31 +500,84 @@ possible relative difference in the spin-up and spin-down intensities of the
 other beam. Studies have shown that $R_{\frac{0\uparrow}{0\downarrow}} \approx
 1$ with good precision.
 
+%\subsection{preliminary results}
+The STAR preliminary results for the $A_{N}$ measurement of the $W^{+}$ and $W^{-}$ boson production are shown separately in Fig.~\ref{Fig:W-An} as a function of $y^{W}$ and $P_{T}^{W}$. 
+The systematic uncertainties, evaluated according to the procedure described in Sec.~\ref{Sec:Syst}, are added in quadrature. 
+The 3.4\% systematic uncertainty on beam polarization measurement is not shown in the plots. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.49\textwidth]{images/asymmetries/hd_Wp_AsymAmpSqrtVsRap.eps}
+  \includegraphics[width=0.49\textwidth]{images/asymmetries/hd_Wm_AsymAmpSqrtVsRap.eps}
+  \includegraphics[width=0.49\textwidth]{images/asymmetries/hd_Wp_AsymAmpSqrtVsPt.eps}
+  \includegraphics[width=0.49\textwidth]{images/asymmetries/hd_Wm_AsymAmpSqrtVsPt.eps}
+  %\includegraphics[width=0.44\textwidth]{images/asymmetries/hd_Z0_AsymAmpSqrtVsRap}
+  \caption{Transverse single spin asymmetry amplitude for $W^{\pm}$ boson production, the 3.4\% overall systematic uncertainty due to beam polarization is not included.}
+  \label{Fig:W-An}
+\end{figure}
+
+\section{The $Z^{0}$ selection and asymmetry measurement}
+The $Z^{0}\rightarrow e^{+}e^{-}$ process has many advantages: it is experimentally very clean and the boson kinematics are easy to reconstruct since there is no neutrino in the final decay (thus it carries only the overall systematics coming from the polarization measurement), it is background free and the asymmetry is expected to be the same size as the $W^{\pm}$ one. The only big disadvantage is the much lower cross section which makes the measurement very statistics hungry. 
+
+A data sample characterized by the $Z^{0}$ signature has been selected, requiring two isolated high $P_{T} > 25$~GeV electrons, of opposite charge and with an invariant mass within $\pm 20 \%$ of the nominal value.
+The STAR preliminary result for the $A_{N}$ measurement of the $Z^{0}$ boson production in a single $y^{Z}$, $P_{T}^{Z}$ bin is shown in Fig.~\ref{Fig:Z-An}. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{images/asymmetries/hd_Z0_AsymAmpSqrtVsRap}
+  \caption{Transverse single spin asymmetry amplitude for $Z^{0}$ boson production, the 3.4\% overall systematic uncertainty due to beam polarization is not included.}
+  \label{Fig:Z-An}
+\end{figure}
 
 
-\section{Correction for Background}
+\section{Conclusions and Outlook}
+This preliminary study is a proof-of-principle which shows that STAR is able to measure the transverse single spin asymmetries $A_{N}$ for fully reconstructed $W^{\pm}$, $Z^{0}$ bosons based on a pilot run of transverse polarized p+p collisions at $\sqrt{s}=500$~GeV with a recorded integrated luminosity of $25~\text{pb}^{-1}$. 
+The preliminary results from Fig.~\ref{Fig:W-An} can be compared with the most up-to-date theoretical $A_{N}$ predictions for $W^{\pm}$, $Z^{0}$ boson production including TMD-evolution from reference~\cite{Kang:2014}, shown in Fig.~\ref{Fig:An-prediction}, where the error bands have been updated accounting for the current almost complete uncertainty on see-quark functions in the fits~\cite{Kang:private}.
+Measuring the production of $W^{\pm}$ bosons at $\sqrt{s}=500$~GeV can lead to the first experimental test of the sign change of the Sivers function. Furthermore, it provides an ideal tool to study the spin-flavor structure of sea quarks inside the proton. The left-handed $W$ boson only couples to (anti)quarks of a certain helicity, giving rise to large parity-violating single spin asymmetries. In addition, the coupling of the $W$ to the weak charge correlates directly to quark flavor. Ignoring quark mixing, $W^{\pm}$ bosons are produced through $u+\bar d (d + \bar u)$ interactions. A measurement of the transverse single spin asymmetry will provide the worldwide first constraint on the sea quark Sivers function in an x-range, where the measured asymmetry in the  $\bar u$ and $\bar d$ unpolarized sea quark distribution functions, as measured by E866~\cite{E866}, can only be explained by strong non-pQCD contributions. Figure~\ref{Fig:Run16Proj} shows the projected uncertainties for transverse single spin asymmetries of $W^{\pm}$, $Z^{0}$ bosons as functions of rapidity and $P_{T}$ for a delivered integrated luminosity of 900 $\text{pb}^{-1}$ compared to 400 $\text{pb}^{-1}$ , at an average beam polarization of $\sim55\%$. RHIC is capable of delivering 900 $\text{pb}^{-1}$ in 14 weeks running using a dynamic $\beta$* squeeze~\cite{beta_squeeze} through the fill. The dynamic $\beta$* squeeze provides a factor 2 increase of the luminosity in a fill as the luminosity profile through the fill is kept flat.
+
+STAR is the only experiment capable of measuring $A_{N}$ for direct photons, for $W^{\pm}$ and $Z^{0}$ bosons, and possibly for DY. It can provide a world-wide unique opportunity to simultaneously test TMD evolution, access the Sivers function for sea quarks, and test the predicted sign-change for the Sivers function.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.32\textwidth]{images/predictions/w_plus.eps}
+  \includegraphics[width=0.32\textwidth]{images/predictions/w_minus.eps}
+  \includegraphics[width=0.32\textwidth]{images/predictions/z0.eps}
+  \caption{Theoretical prediction of $A_{N}$ for $W^{\pm}$ and $Z^{0}$ boson production in p+p collisions at $\sqrt{s}=500$~GeV including TMD-evolution~\cite{Kang:2014}.}
+  \label{Fig:An-prediction}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.32\textwidth]{images/projections/hd_WAsym2016ProjPt_zoom.eps}
+  \includegraphics[width=0.32\textwidth]{images/projections/hd_WAsym2016ProjRap_zoom.eps}
+  \includegraphics[width=0.32\textwidth]{images/projections/hd_Z0Asym2016ProjRap.eps}
+  \caption{Projections of statistical uncertainties of an $A_{N}$ measurement for  $W^{\pm}$ and $Z^{0}$ boson production at STAR assuming a delivered luminosity of 900~$\text{pb}^{-1}$, the 400~$\text{pb}^{-1}$ case is also shown for comparison.}
+  \label{Fig:Run16Proj}
+\end{figure}
+  
+%\section{Correction for Background}
 %{{{
 
-In this analysis an optimal set of cuts is applied to select signal enriched
-events without significant loss in the final statistics. The final yields
-include some fraction of background events $f_B$ which along with the signal
-asymmetry contribute to the measured asymmetry $A_N$. In order to extract the
-signal asymmetry we decompose $A_N$ as following:
+%In this analysis an optimal set of cuts is applied to select signal enriched
+%events without significant loss in the final statistics. The final yields
+%include some fraction of background events $f_B$ which along with the signal
+%asymmetry contribute to the measured asymmetry $A_N$. In order to extract the
+%signal asymmetry we decompose $A_N$ as following:
 %
-\begin{equation}
-A_N = f_\text{sig} A^\text{sig}_N + f_B A^B_N,
-\label{eq:asym_bkg}
-\end{equation}
+%\begin{equation}
+%A_N = f_\text{sig} A^\text{sig}_N + f_B A^B_N,
+%\label{eq:asym_bkg}
+%\end{equation}
 %
-with $f_\text{sig} = 1 - f_B$. The last term in \eqref{eq:asym_bkg} may include
-contributions from various backgrounds which will be discussed later. The
-background fractions and asymmetries have to be estimated in order to extract
-the final asymmetry of the signal:
+%with $f_\text{sig} = 1 - f_B$. The last term in \eqref{eq:asym_bkg} may include
+%contributions from various backgrounds which will be discussed later. The
+%background fractions and asymmetries have to be estimated in order to extract
+%the final asymmetry of the signal:
 %
-\begin{equation}
-A^\text{sig}_N = \frac{A_N + f_B A^B_N}{1 - f_B}
-\label{eq_bkg_corr}
-\end{equation}
+%\begin{equation}
+%A^\text{sig}_N = \frac{A_N + f_B A^B_N}{1 - f_B}
+%\label{eq_bkg_corr}
+%\end{equation}
 
 %}}}
 
@@ -490,136 +613,317 @@ A^\text{sig}_N = \frac{A_N + f_B A^B_N}{1 - f_B}
 %}}}
 
 
-\section{Asymmetry measurement}
+%\section{Asymmetry measurement}
 %{{{
 
-For the SSA measurements we are interested in the proton interactions
-$p^{\uparrow/\downarrow} p \to W^\pm \to e^\pm \nu_e$ in which the spin direction of one
-of the protons is irrelevant, \textit{i.e} unpolarized protons. In the
-experiment we can separately measure full and differential cross sections for
-spin-up ($\sigma_\uparrow$), spin-down ($\sigma_\downarrow$), and unpolarized
-($\sigma_0$) interactions which are related as:
+%For the SSA measurements we are interested in the proton interactions
+%$p^{\uparrow/\downarrow} p \to W^\pm \to e^\pm \nu_e$ in which the spin direction of one
+%of the protons is irrelevant, \textit{i.e} unpolarized protons. In the
+%experiment we can separately measure full and differential cross sections for
+%spin-up ($\sigma_\uparrow$), spin-down ($\sigma_\downarrow$), and unpolarized
+%($\sigma_0$) interactions which are related as:
 
-\begin{align}
-\sigma_\uparrow   &= \sigma_0 (1 + A_N ), \\
-\sigma_\downarrow &= \sigma_0 (1 - A_N ).
-\end{align}
+%\begin{align}
+%\sigma_\uparrow   &= \sigma_0 (1 + A_N ), \\
+%\sigma_\downarrow &= \sigma_0 (1 - A_N ).
+%\end{align}
 
-In the following we assume that the polarization vector does not significantly
-deviate from the vertical direction given by the normal unit vector $\vec n$
-along the vertical $y$ axis so, the notation is $P \equiv \vec{P} \cdot
-\vec{n}$. We also assume the same magnitude of the polarization vector for
-spin-up and spin-down bunches, \textit{i.e.} $P = P_\uparrow = P_\downarrow$.
-For unpolarized cross section $\sigma_0 \equiv (\sigma_\uparrow +
-\sigma_\downarrow)/2$ the asymmetry $A_N$ is expressed as:
+%In the following we assume that the polarization vector does not significantly
+%deviate from the vertical direction given by the normal unit vector $\vec n$
+%along the vertical $y$ axis so, the notation is $P \equiv \vec{P} \cdot
+%\vec{n}$. We also assume the same magnitude of the polarization vector for
+%spin-up and spin-down bunches, \textit{i.e.} $P = P_\uparrow = P_\downarrow$.
+%For unpolarized cross section $\sigma_0 \equiv (\sigma_\uparrow +
+%\sigma_\downarrow)/2$ the asymmetry $A_N$ is expressed as:
 
-\begin{align}
-\label{eq_anapower}
-A_N &= \frac{\sigma_\uparrow - \sigma_\downarrow}{\sigma_\uparrow +
-   \sigma_\downarrow}.
-\end{align}
+%\begin{align}
+%\label{eq_anapower}
+%A_N &= \frac{\sigma_\uparrow - \sigma_\downarrow}{\sigma_\uparrow +
+%   \sigma_\downarrow}.
+%\end{align}
 
-The number of recorded events in which the particle is produced with momentum
-$p_T$ at angle $\Omega$ is:
+%The number of recorded events in which the particle is produced with momentum
+%$p_T$ at angle $\Omega$ is:
 
-\begin{align}
-\frac{dN_{\uparrow/\downarrow}}{d\Omega dp_T}(\Omega, p_T) &=
-   {\cal L}_{\uparrow/\downarrow} \frac{d\sigma_0}{d\Omega dp_T}(\Omega, p_T)
-   \varepsilon(\Omega, p_T) \big( 1 \pm A_N(\Omega, p_T) P \big),
-\label{eq:yield_diff}
-\end{align}
+%\begin{align}
+%\frac{dN_{\uparrow/\downarrow}}{d\Omega dp_T}(\Omega, p_T) &=
+%   {\cal L}_{\uparrow/\downarrow} \frac{d\sigma_0}{d\Omega dp_T}(\Omega, p_T)
+%   \varepsilon(\Omega, p_T) \big( 1 \pm A_N(\Omega, p_T) P \big),
+%\label{eq:yield_diff}
+%\end{align}
 
-\noindent
-where detection efficiency $\varepsilon$ does not depend on the spin direction
-of the interacting proton. In fact, individual events can be tagged by the
-nominal spin of colliding protons. We thus can bin all collected data  in four
-bins $N_{\uparrow\uparrow}$, $N_{\uparrow\downarrow}$,
-$N_{\downarrow\uparrow}$, and $N_{\downarrow\downarrow}$. For the SSA
-measurement the polarization of one of the beams is ignored by combining the
-yields with opposite spins, \textit{e.g.}
+%\noindent
+%where detection efficiency $\varepsilon$ does not depend on the spin direction
+%of the interacting proton. In fact, individual events can be tagged by the
+%nominal spin of colliding protons. We thus can bin all collected data  in four
+%bins $N_{\uparrow\uparrow}$, $N_{\uparrow\downarrow}$,
+%$N_{\downarrow\uparrow}$, and $N_{\downarrow\downarrow}$. For the SSA
+%measurement the polarization of one of the beams is ignored by combining the
+%yields with opposite spins, \textit{e.g.}
 
-\begin{align}
-N_{\uparrow}   \equiv N_{\uparrow0}   &= N_{\uparrow\uparrow}   + R_{\frac{0\uparrow}{0\downarrow}} N_{\uparrow\downarrow},\\
-N_{\downarrow} \equiv N_{\downarrow0} &= N_{\downarrow\uparrow} + R_{\frac{0\uparrow}{0\downarrow}} N_{\downarrow\downarrow},
-\end{align}
+%\begin{align}
+%N_{\uparrow}   \equiv N_{\uparrow0}   &= N_{\uparrow\uparrow}   + R_{\frac{0\uparrow}{0\downarrow}} N_{\uparrow\downarrow},\\
+%N_{\downarrow} \equiv N_{\downarrow0} &= N_{\downarrow\uparrow} + R_{\frac{0\uparrow}{0\downarrow}} N_{\downarrow\downarrow},
+%\end{align}
 
-\noindent
-where re-weighting factor $R_{\frac{0\uparrow}{0\downarrow}}$ addresses a
-possible relative difference in the spin-up and spin-down intensities of the
-other beam. Studies have shown that $R_{\frac{0\uparrow}{0\downarrow}} \approx
-1$ with good precision.
+%\noindent
+%where re-weighting factor $R_{\frac{0\uparrow}{0\downarrow}}$ addresses a
+%possible relative difference in the spin-up and spin-down intensities of the
+%other beam. Studies have shown that $R_{\frac{0\uparrow}{0\downarrow}} \approx
+%1$ with good precision.
 
-We bin our data sample in three observable variables $\{y, \phi, p_T\}$ with
-center and width of the $i$-th bin being $\{y_i, \phi_i, p_{T,i}\}$ and
-$\{\Delta y_i, \Delta\phi_i, \Delta p_{T,i}\} \equiv \{\Delta\Omega_i\{y_i,
-\Delta\phi_i\}, \Delta p_{T,i}\} \equiv \Delta_i$ respectively. The number of
-events in each bin, $N_i$, is calculated by integrating both sides
-of~\eqref{eq:yield_diff} within the bin:
+%We bin our data sample in three observable variables $\{y, \phi, p_T\}$ with
+%center and width of the $i$-th bin being $\{y_i, \phi_i, p_{T,i}\}$ and
+%$\{\Delta y_i, \Delta\phi_i, \Delta p_{T,i}\} \equiv \{\Delta\Omega_i\{y_i,
+%\Delta\phi_i\}, \Delta p_{T,i}\} \equiv \Delta_i$ respectively. The number of
+%events in each bin, $N_i$, is calculated by integrating both sides
+%of~\eqref{eq:yield_diff} within the bin:
 
-\begin{align}
-N_{\uparrow/\downarrow, i} =
-   \int\limits_{\Delta_i} \frac{dN_{\uparrow/\downarrow}}{d\Omega dp_T} d\Omega dp_T.
-\end{align}
+%\begin{align}
+%N_{\uparrow/\downarrow, i} =
+%   \int\limits_{\Delta_i} \frac{dN_{\uparrow/\downarrow}}{d\Omega dp_T} d\Omega dp_T.
+%\end{align}
 
-\noindent
-In that bin we assume the average value:
+%\noindent
+%In that bin we assume the average value:
 
-\begin{align}
-A_{N,i} = \frac{1}{\Delta_i} \int\limits_{\Delta_i} A_N d\Omega dp_T,
-\end{align}
+%\begin{align}
+%A_{N,i} = \frac{1}{\Delta_i} \int\limits_{\Delta_i} A_N d\Omega dp_T,
+%\end{align}
 
-\noindent
-and similarly for the cross section ($\sigma_{0,i}$) and efficiency
-($\varepsilon_i$). Finally, for the yields in each bin we can write:
+%\noindent
+%and similarly for the cross section ($\sigma_{0,i}$) and efficiency
+%($\varepsilon_i$). Finally, for the yields in each bin we can write:
 
-\begin{align}
-N_{\uparrow/\downarrow, i} = {\cal L}_{\uparrow/\downarrow} \sigma_{0,i}
-\varepsilon_i \Delta\Omega_i \Delta p_{T,i} \left( 1 \pm A_{N,i}(\Omega, p_T) P \right)
-\label{eq:yield}
-\end{align}
+%\begin{align}
+%N_{\uparrow/\downarrow, i} = {\cal L}_{\uparrow/\downarrow} \sigma_{0,i}
+%\varepsilon_i \Delta\Omega_i \Delta p_{T,i} \left( 1 \pm A_{N,i}(\Omega, p_T) P \right)
+%\label{eq:yield}
+%\end{align}
 
-The spacial distributions of the physical asymmetry and the cross sections are
-the same for the spin-up and spin-down interactions with respect to the spin
-direction. We can use this fact to easily get rid of the  quantities of no
-interest in \eqref{eq:yield}. This is achieved by constructing geometric
-means $\sqrt{N_\uparrow(\phi_i)N_\downarrow(\phi_i+\pi)}$ and
-$\sqrt{N_\uparrow(\phi_i+\pi)N_\downarrow(\phi_i)}$ of the yields
+%The spacial distributions of the physical asymmetry and the cross sections are
+%the same for the spin-up and spin-down interactions with respect to the spin
+%direction. We can use this fact to easily get rid of the  quantities of no
+%interest in \eqref{eq:yield}. This is achieved by constructing geometric
+%means $\sqrt{N_\uparrow(\phi_i)N_\downarrow(\phi_i+\pi)}$ and
+%$\sqrt{N_\uparrow(\phi_i+\pi)N_\downarrow(\phi_i)}$ of the yields
 
 
-\begin{align}
-N_\uparrow(\phi_i)       &= {\cal L_\uparrow}
-   \sigma_{0}(\phi_i) \varepsilon(\phi_i)    \Delta\Omega_i \Delta p_T \left( 1 + A_{N}(\phi_i) P \right) \\
+%\begin{align}
+%N_\uparrow(\phi_i)       &= {\cal L_\uparrow}
+%   \sigma_{0}(\phi_i) \varepsilon(\phi_i)    \Delta\Omega_i \Delta p_T \left( 1 + A_{N}(\phi_i) P \right) \\
 %
-N_\uparrow(\phi_i+\pi)       &= {\cal L_\uparrow}
-   \sigma_{0}(\phi_i+\pi) \varepsilon(\phi_i+\pi)    \Delta\Omega_i \Delta p_T \left( 1 + A_{N}(\phi_i+\pi) P \right)
-\end{align}
+%N_\uparrow(\phi_i+\pi)       &= {\cal L_\uparrow}
+%   \sigma_{0}(\phi_i+\pi) \varepsilon(\phi_i+\pi)    \Delta\Omega_i \Delta p_T \left( 1 + A_{N}(\phi_i+\pi) P \right)
+%\end{align}
 
 
-\begin{align}
-N_\downarrow(\phi_i+\pi) &= {\cal L_\downarrow}
-   \sigma_{0}(\phi_i+\pi) \varepsilon(\phi_i+\pi) \Delta\Omega_i \Delta p_T \left( 1 - A_{N}(\phi_i+\pi) P \right) \\
+%\begin{align}
+%N_\downarrow(\phi_i+\pi) &= {\cal L_\downarrow}
+%   \sigma_{0}(\phi_i+\pi) \varepsilon(\phi_i+\pi) \Delta\Omega_i \Delta p_T \left( 1 - A_{N}(\phi_i+\pi) P \right) \\
 %
-N_\downarrow(\phi_i) &= {\cal L_\downarrow}
-   \sigma_{0}(\phi_i) \varepsilon(\phi_i) \Delta\Omega_i \Delta p_T \left( 1 - A_{N}(\phi_i) P \right)
-\end{align}
+%N_\downarrow(\phi_i) &= {\cal L_\downarrow}
+%   \sigma_{0}(\phi_i) \varepsilon(\phi_i) \Delta\Omega_i \Delta p_T \left( 1 - A_{N}(\phi_i) P \right)
+%\end{align}
 
 
-Using the relations for the asymmetry and cross section $A_{N}(\phi_i+\pi) =
--A_{N}(\phi_i)$, $\sigma_0(\phi_i+\pi) = \sigma_0(\phi_i)$ we get for $A_N$
+%Using the relations for the asymmetry and cross section $A_{N}(\phi_i+\pi) =
+%-A_{N}(\phi_i)$, $\sigma_0(\phi_i+\pi) = \sigma_0(\phi_i)$ we get for $A_N$
 
 
-\begin{align}
-A_{N, i} = \frac{1}{P} \frac{%
-\sqrt{N_{\uparrow}(\phi_i)N_{\downarrow}(\phi_i+\pi)} -
-\sqrt{N_{\uparrow}(\phi_i+\pi)N_{\downarrow}(\phi_i)}
-}{%
-\sqrt{N_{\uparrow}(\phi_i)N_{\downarrow}(\phi_i+\pi)} +
-\sqrt{N_{\uparrow}(\phi_i+\pi)N_{\downarrow}(\phi_i)}
-}
-\label{eq:asym_sqrt}
-\end{align}
+%\begin{align}
+%A_{N, i} = \frac{1}{P} \frac{%
+%\sqrt{N_{\uparrow}(\phi_i)N_{\downarrow}(\phi_i+\pi)} -
+%\sqrt{N_{\uparrow}(\phi_i+\pi)N_{\downarrow}(\phi_i)}
+%}{%
+%\sqrt{N_{\uparrow}(\phi_i)N_{\downarrow}(\phi_i+\pi)} +
+%\sqrt{N_{\uparrow}(\phi_i+\pi)N_{\downarrow}(\phi_i)}
+%}
+%\label{eq:asym_sqrt}
+%\end{align}
 
 %}}}
+
+
+\appendix
+\section{Reproduction of results}
+The code used for the present analysis is in the CVS repositories at the link
+\newline \url{http://www.star.bnl.gov/cgi-bin/protected/cvsweb.cgi/offline/users/fazio/vbasym/}
+
+To check the code out, from the location where the package will be
+installed on your machine issue the following command:
+
+\begin{lstlisting}
+    cvs co -d vbasym offline/users/fazio/vbasym/
+\end{lstlisting}
+
+%The best way to start with the analysis is to clone the latest version of the
+%code from the git repository. From the location where the package will be
+%installed on your machine issue the following command:
+
+%\begin{lstlisting}
+%    git clone git@github.com:plexoos/vbasym.git 
+%    cd vbasym 
+%    git submodule init 
+%    git submodule update 
+%\end{lstlisting}
+
+Before you can build and run the program the following environment variables must
+be set:
+
+\begin{lstlisting}
+    VBASYM_DIR      
+\end{lstlisting}  
+this variable contains the path to the project directory 
+\begin{lstlisting}  
+    VBASYM_RESULTS_DIR
+\end{lstlisting}
+this variable contains the path to the output directory where the results will be put.
+
+The following environment variables are assumed to be set in the standard STAR
+session:
+
+\begin{lstlisting}
+    STAR_VERSION
+    STAR_HOST_SYS
+    ROOTSYS
+\end{lstlisting}
+
+Example scripts setting up these variables can be found in the ``scripts/''
+directory:
+
+\begin{lstlisting}
+    scripts/setup.sh
+    scripts/setup.csh
+\end{lstlisting}
+
+To build the library run a slightly modified ``cons'' command in the terminal
+
+\begin{lstlisting}
+    cd $VBASYM_DIR
+    cons CXXFLAGS="-m32 -fPIC -pipe -Wall -Woverloaded-virtual -Wno-long-long" \
+         EXTRA_CXXFLAGS="-I${OPTSTAR}/include -Icontrib/root-helper" \
+         CPPPATH="#:#StRoot:#.sl64_gcc447/include:${ROOTSYS}/include:./contrib/root-helper"
+\end{lstlisting}
+
+The binaries are compiled by issuing the following command:
+
+\begin{lstlisting}
+    mkdir build
+    cd build
+    cmake28 .. -DBOOST_ROOT=${OPTSTAR}
+    make
+\end{lstlisting}
+
+\subsection{How to split the Monte Carlo file lists}
+%=======================================
+
+Embedded Monte-Carlo (MC) files relevant for this analysis were produced using PYTHIA
+and are stored on the STAR data disks. The file lists are containted in
+``\$VBASYM\_DIR/runlists'' with the following format used for their names: ``\texttt{<run
+period>\_mc\_<process type>}''. For example, ``run11\_mc\_Wp2enu'' is a file list for
+the $W^{+}\rightarrow e\nu$ MC embedded with Run 11 zero bias events.
+
+The list may contain a large number of files. It is convenient, when submitting
+a job to *condor*, to split very long lists into several sublists or ``runs". To
+split it do:
+
+\begin{lstlisting}
+    cd $VBASYM_DIR/runlists/
+    split -d -l <# of lines in each sublist> <list name> <list name>_
+\end{lstlisting}
+
+For example, executing the command
+
+\begin{lstlisting}
+    split -d -l 5 run11_mc_Z02ee run11_mc_Z02ee_
+\end{lstlisting}
+
+will split the content of the list ``run11\_mc\_Z02ee'' in many sublist each
+containing 5 lines of the original list and numbered in numerical order starting
+with 00. In your directory you should see files named:
+
+\begin{lstlisting}
+    run11_mc_Z02ee_00
+    run11_mc_Z02ee_01
+    run11_mc_Z02ee_02
+    ...
+\end{lstlisting}
+
+Now all you have to do is to create a text file containing the names of this
+sublists you just created. For example create the file named
+
+\begin{lstlisting}
+    run11_mc_Z02ee_
+\end{lstlisting}
+
+and copy in it the list
+
+\begin{lstlisting}
+    run11_mc_Z02ee_00
+    run11_mc_Z02ee_01
+    run11_mc_Z02ee_02
+    ...
+\end{lstlisting}
+
+Now all what is needed it to submit to condor the file ``run11\_mc\_Z02ee\_''. The
+next section explains how to submit to condor.
+
+
+\subsection{How to produce the analysis ROOT trees}
+%======================================
+
+To produce the jet root trees do:
+
+\begin{lstlisting}
+    cd $VBASYM_DIR/scripts
+    submit_jobs.sh run12_pp_j3 -z -r12 --jets
+\end{lstlisting}
+
+Then to produce the analysis root trees do:
+
+\begin{lstlisting}
+    submit_jobs.sh run12_pp_j3 -z -r12
+\end{lstlisting}
+
+Other examples:
+
+\begin{lstlisting}
+    submit_jobs.sh run11_pp_transverse --jets
+    submit_jobs.sh run11_pp_transverse
+    submit_jobs.sh run11_mc_Wp2enu_ -m --jets
+\end{lstlisting}
+
+\subsection{How to check condor jobs output}
+%===============================
+
+One can check the output files returned by condor by verifying the ``tralala"
+marker in the log files. There should be just one entry per log file:
+
+\begin{lstlisting}
+    grep tralala /path/to/log/* > /tmp/check_jobs_tralala &
+    diff --suppress-common-lines -y $VBASYM_DIR/runlists/run11_pp_transverse /tmp/check_jobs_tralala
+\end{lstlisting}
+
+\subsection{How to produce histograms from ROOT trees}
+%=========================================
+
+Various sets of histograms can be produced from the ROOT trees generated with
+`stana`. This stage of the analysis is done with the help of `vbana` executable.
+One can run
+
+\begin{lstlisting}
+    vbana -f run11_pp_transverse
+\end{lstlisting}
+
+and on the MC samples:
+
+\begin{lstlisting}
+    vbana -f run11_mc_Wp2enu_
+\end{lstlisting}
+
+For help with other options run ``vbana -h''.
+
 \newpage
 
 \begin{thebibliography}{9}
@@ -633,35 +937,58 @@ A_{N, i} = \frac{1}{P} \frac{%
   [arXiv:0903.3629 [hep-ph]].
 
 \bibitem{STAR_W_AL_2009-paper}
-M. Aggarwal et al. (STAR), Measurement of the parity-violating longitudinal single-spin asymmetryfor $W^{\pm}$ boson production in polarized proton-proton collisions at $\sqrt{s} = 500$~GeV, 
+M. Aggarwal et al. (STAR), Measurement of the parity-violating longitudinal single-spin asymmetry
+for $W^{\pm}$ boson production in polarized proton-proton collisions at $\sqrt{s} = 500$~GeV, 
 Phys. Rev. Lett.106, 062002 (2011), 
 arXiv:1009.0326 [hep-ex].
 
-\bibitem{STAR_W_AL_2009-note}J. Balewski, J. Seele, J. Stevens, and O. Grebenyuk, Measurement of the parity-violating longitu-dinal single-spin asymmetry $A_{L}$ for $W^{+}$ and $W^{-}$ boson production in polarized $\vec{p} + p$ collisions at$\sqrt{s}=500$~GeV in Run 9 (STAR Note \# 516), (2010).
+\bibitem{STAR_W_AL_2009-note}
+J. Balewski, J. Seele, J. Stevens, and O. Grebenyuk, Measurement of the parity-violating longitu-
+dinal single-spin asymmetry $A_{L}$ for $W^{+}$ and $W^{-}$ boson production in polarized $\vec{p} + p$ collisions at
+$\sqrt{s}=500$~GeV in Run 9 (STAR Note \# 516), (2010).
 
 \bibitem{STAR_W_AL_2012-paper}
 L. Adamczyk et al. (STAR), Measurement of longitudinal spin asymmetries for weak boson production in polarized proton-proton collisions at RHIC, 
 Phys.Rev.Lett. 113 (2014) 072301, 
 arXiv:1404.6880 [nucl-ex]
 
-\bibitem{STAR_W_AL_2012-note}J. Balewski, J. Stevens, and J. Zhang, Measurement of the parity-violating longitudinal single-spinasymmetry for weak boson production in polarized proton-proton collisions in Run 11 + 12 at$\sqrt{s} = 510$~GeV (STAR Note \# 597), (2013).
+\bibitem{STAR_W_AL_2012-note}
+J. Balewski, J. Stevens, and J. Zhang, Measurement of the parity-violating longitudinal single-spin
+asymmetry for weak boson production in polarized proton-proton collisions in Run 11 + 12 at
+$\sqrt{s} = 510$~GeV (STAR Note \# 597), (2013).
 
 \bibitem{STAR_W_xSec_2009-paper}
 L. Adamczyk et al. (STAR), Measurement of the $W\rightarrow e\nu$ and $Z^{0}/\gamma^{*}\rightarrow e^{+}e^{-}$ 
-production cross sections at mid-rapidity in proton-proton collisions at$\sqrt{s} = 500$~GeV, 
+production cross sections at mid-rapidity in proton-proton collisions at
+$\sqrt{s} = 500$~GeV, 
 Phys. Rev. D85, 092010 (2012), 
 arXiv:1112.2980 [hep-ex].
 
 \bibitem{STAR_W_xSec_2009-note}
 J. Stevens, Measurement of the $W\rightarrow e\nu$ and $Z^{0}/\gamma^{*}\rightarrow e^{+}e^{-}$  
-Production Cross Sections at Mid-rapidity in Proton-Proton Collisions at$\sqrt{s}=500$~GeV in Run 9 (STAR Note \# 546), (2011).
+Production Cross Sections at Mid-rapidity in Proton-Proton Collisions at
+$\sqrt{s}=500$~GeV in Run 9 (STAR Note \# 546), (2011).
 
-\bibitem{STAR:Wlong}
-L.~Adamczyk et al.,The STAR Collaboration, arXiv:1404.6880 [nucl-ex]
+\bibitem{RHIC-Pol} 
+RHIC Polarimetry Group, RHIC/CAD Accelerator Physics Note, 490 (2013).
 
-\bibitem{WCrossSecRun9}
-``Measurement of the W and Z Production Cross Sections at Mid-rapidity in Proton-P
+\bibitem{sqrtFormula}
+B\"{u}ltmann S et al. {\it Phys. Lett. B} {\bf 632} 167 (2006)\\
+B\"{u}ltmann S et al. {\it Phys. Lett. B} {\bf 647} 98 (2007)\\
+Ohlsen G G and Keaton Jr P W 1973 {\it Nucl. Instr. Meth.} {\bf 109} 41
 
+\bibitem{Kang:2014}
+M.~G.~Echevarria, A.~Idilbi, Z.-B.~Kang, I.~Vitev,
+{\it Phys. Rev. D} {\bf 89}, 074013 (2014)
+
+\bibitem{Kang:private}
+Z.-B.~Kang, private communication
+
+\bibitem{E866}
+E.~A.~Hawker et al. {\it Phys. Rev. Lett.} {\bf 80}, 3715 (1998)
+
+\bibitem{beta_squeeze}
+D.~Trbojevic, J.~Yichao, Y.~Luo, BNL-102458-2013-CP
 \end{thebibliography}
 
 \end{document}
