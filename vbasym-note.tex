@@ -15,6 +15,8 @@
 \usepackage{cite}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{url}
+\usepackage{breakurl}
 
 \lstset{ %
  % backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
@@ -63,7 +65,7 @@ Collisions at RHIC}
 \author{Dmitri Smirnov\thanks{dsmirnov@bnl.gov}}
 
 \affil{Physics Department, Brookhaven National Lab}
-\date{\today\\v1.0}
+\date{\today\\v2.0}
 
 \maketitle
 
@@ -269,7 +271,6 @@ A MC test shows that after the correction has been applied, data are in a very g
 Figure~\ref{fig:plot_DataMc_WpPt_PtRecoil} shows how the data/MC agreements improves requiring a minimum recoil-$P_{T}$ value of 0.5~GeV compared with a lower or no threshold.
 The final data/MC agreement for reconstructing the $W$ boson transverse momentum over an extended range is  shown in Fig.~\ref{fig:plot_DataMc_Wp}($left$).
 
-
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.8]{images/plot_PtCorrFactor}
@@ -295,6 +296,33 @@ The final data/MC agreement for reconstructing the $W$ boson transverse momentum
 \end{center}
 \caption{Data/MC agreement for the total recoil-$P_{T}$ with a minimum value of $P_{T}>0.2$~GeV ({\it left}), $P_{T}>0.3$~GeV ({\it center}) and $P_{T}>0.5$~GeV ({\it right}).}
 \label{fig:plot_DataMc_WpPt_PtRecoil}
+\end{figure}
+
+\subsubsection{Dependence of the MC correction by the charge sign}
+Thou not expected, a possible dependence of the correction factor by the boson charge has been tested by independently using an embedded $W^{-}$ Monte Carlo sample for its calculation. Fig.~\ref{fig:plot_PtCorrFactor_ZDChigh_ProfileX} ({\it top left}) shows a comparison of the projected correction factor in each Recoil $P_{T}$ bin, calculated using  W+ and W- samples independently. This comparison shows that the boson charge has no effect on the correction factor.
+
+\subsubsection{Dependence of the MC correction by the ZDC rates}
+Since the $W-P_{T}$ reconstruction technique relies on embedded Monte Carlo samples, a possible dependance of the correction factor by the ZDC rates of the zero-bias runs used for embedding has been investigated. The ZDC rate of 2011 pp zero-bias events ranges between 40k and 95k. In order to test a dependence on the ZDC rate, a subsample of zero-bias runs with a rate > 90k, corresponding to a total of 7 runs, has been selected and the corresponding embedded MC sample used  to reconstruct $W-P_{T}$. Fig.~\ref{fig:plot_PtCorrFactor_ZDChigh_ProfileX} ({\it top right}) shows a comparison of the projected correction factor in each Recoil $P_{T}$ bin using a only the subsample of zero-bias events with high ZDC rates and using the whole sample of zero bias events. The high rate sample contains much less statistics, thus suffering higher fluctuation. From the comparison we can easily conclude that in run 2011 there is no sizable difference in calculating the correction factor due to ZDC rates of zed-bias embedding runs. 
+
+\subsubsection{Dependence of the MC correction by the PYTHIA tuning}
+The Monte Carlo sample used for the correction factor calculation has been simulated with PYTHIA 6.4 using the ``Perugia tune'' and setting PARP(91) = 2 and CKIN(3) = 10. The choice of the Perugia tuning follows the study shown in Fig.~\ref{fig:plot_PYTHIA_Tune}, where samples generated with different tunings are compared with an independent prediction from RhicBOS Monte Carlo~\cite{RhicBOS}, from Altarelli et al.~\cite{Altarelli} and the UA1 experimental data~\cite{UA1}. It is evident that ``tune A'' generates a peak that is shifted to lower boson $P_{T}$ values.  Thus, it is to be expected that the correction factor will show a dependence on the tuning used for the simulation. To test this dependence, we used a Monte Carlo sample simulated using PYTHIA Tune A, PARP(91)=1, CKIN(3)=1 in calculating the correction factor and compare this with our original tuning, as shown in Fig.~\ref{fig:plot_PtCorrFactor_ZDChigh_ProfileX} ({\it bottom}). One can see that the correction factor shows a dependence on the PYTHIA tuning for boson $P_{T} < 10$~GeV. It is also important to stress that, although we put ourself in the most extreme case comparing very different tunings, the discrepancy of the average correction factor is always much smaller than the standard deviation.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.43]{images/plot_PtCorrFactor_ProfileX}
+\includegraphics[scale=0.43]{images/plot_PtCorrFactor_ZDChigh_ProfileX}
+\includegraphics[scale=0.43]{images/plot_PtCorrFactor_TuneA_ProfileX}
+\end{center}
+\caption{Comparison of the Correction Factor used in the present analysis ({\it red dots}) with the same factor calculated using a Monte Carlo sample of $W^{-}$ events ({\it top left}), a sample only using high ZDC rate zero-bias runs for embedding ({\it top right}), and a sample using PYTHIA Tune A, PARP(91)=1, CKIN(3)=1 ({\it bottom}). To facilitate the comparison, the correction factor in each recoil-$P_{T}$ bin had been projected, the dots correspond to the average value of the distribution in the corresponding bin, whereas the bars correspond to the standard deviation.}
+\label{fig:plot_PtCorrFactor_ZDChigh_ProfileX}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.7]{images/Pt-Recoil-study/plot_WPT_2}
+\end{center}
+\caption{The W boson $P_{T}$ distribution, generated using different PYTHIA tunings, is compared with RhicBOS Monte Carlo~\cite{RhicBOS}, with the theoretical prediction from Altarelli et al.~\cite{Altarelli} and with the UA1 experimental data~\cite{UA1}.}
+\label{fig:plot_PYTHIA_Tune}
 \end{figure}
 
 \subsection{Longitudinal momentum reconstruction}
@@ -380,7 +408,7 @@ The background sources considered in this analysis are:
 $Z^{0} \rightarrow e^+e^-$; 
 $W^{\pm} \rightarrow \tau\nu \rightarrow e^+e^-\nu$; 
 QCD events decaying into leptons, where one of the final leptons is not detected.
-The first two sources have been evaluated using MC samples simulated with PYTHIA 6.4 using the ``Perugia tune'' and setting $k_{T}=2$ and $ckin(3)=10$. The MC samples pass trough the GEANT 3 simulation of the STAR detector using the SL11d libraries and are embedded to the run11 p+p transverse zero-bias events. To estimate the contribution from the background, the MC samples have been normalized to the $W^{+}$ and the $W^{-}$ data samples according to the collected luminosity as shown in Fig.~\ref{fig:plot_WZ_backgrounds}. The estimated background-over-signal values for $W^{\pm} \rightarrow \tau\nu$ and $Z^{0} \rightarrow e^+e^-$ are shown in the first columns of Table~\ref{Tab:BoS}. 
+The first two sources have been evaluated using MC samples simulated with PYTHIA 6.4 using the ``Perugia tune'' and setting $k_{T}=2$ and $CKIN(3)=10$. The MC samples pass trough the GEANT 3 simulation of the STAR detector using the SL11d libraries and are embedded to the run11 p+p transverse zero-bias events. To estimate the contribution from the background, the MC samples have been normalized to the $W^{+}$ and the $W^{-}$ data samples according to the collected luminosity as shown in Fig.~\ref{fig:plot_WZ_backgrounds}. The estimated background-over-signal values for $W^{\pm} \rightarrow \tau\nu$ and $Z^{0} \rightarrow e^+e^-$ are shown in the first columns of Table~\ref{Tab:BoS}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -456,6 +484,17 @@ asymmetries due to the uncertainty in the measured beam polarization has been es
 \label{fig:SysAnPt} 
 \end{figure}
 
+\section{Average polarization} \label{Sec:Average-Polarization}
+Polarization of proton beams is measured at at RHIC using H-jet and P-Carbon polarimeters and the tables of results per fill $(P_{Fill})$ are available on-line~\cite{RHIC-Pol-by-Fill}. Tables of the luminosity collected in the run 11 at STAR per each run by the W triggers are also available on-line~\cite{STAR-Lumi-by-Run} and the luminosity per fill $(L_{Fill})$ can be simply calculated summing up the luminosity of each run in the fill. 
+
+Thus, the run 2011 average polarization for each beam can be calculated as follows
+
+\begin{equation}
+\label{eq_AvePolarization}
+\langle P \rangle = \frac {\sum\limits_{Fill} (L_{Fill} \cdot P_{Fill})} {\sum\limits_{Fill} P_{Fill}}
+\end{equation}
+
+The results are: $\langle P \rangle = 52.86\%$ for the BLUE beam and $\langle P \rangle = 52.26\%$ for the YELLOW beam. The average value between the two beams,  $\langle P \rangle = 52.56\%$, can be used for calculating the asymmetry, as explained in Sec~\ref{Sec:W-An-measurement}.
 
 \section{Asymmetry measurement} \label{Sec:W-An-measurement}
 %For the $A_{N}$ measurement we are interested in the interaction
@@ -483,7 +522,7 @@ A_{N } sin(\phi)= \frac{1}{<P>}
 \frac{\sqrt{N_\uparrow(\phi_i)N_\downarrow(\phi_i+\pi)} - \sqrt{N_\uparrow(\phi_i+\pi)N_\downarrow(\phi_i)} } 
 {\sqrt{N_\uparrow(\phi_i)N_\downarrow(\phi_i+\pi)} + \sqrt{N_\uparrow(\phi_i+\pi)N_\downarrow(\phi_i)}},
 \end{align}
-where $N$ is the number of recorded events in the $i-th$ bin with a certain spin ($\uparrow \downarrow$) configuration in the ``left'' ($\phi_{i}$) or in the ``right'' ($\phi_{i} + \pi$) side of the detector and $<P>\simeq 53\%$ is the average RHIC beam polarization for 2011 transverse p+p run.  
+where $N$ is the number of recorded events in the $i-th$ bin with a certain spin ($\uparrow \downarrow$) configuration in the ``left'' ($\phi_{i}$) or in the ``right'' ($\phi_{i} + \pi$) side of the detector and $\langle P \rangle = 52.56\%$ is the average RHIC beam polarization for 2011 transverse p+p run as calculated in Sec.~\ref{Sec:Average-Polarization}.  
 For the asymmetry measurement the polarization of one of the beams is ignored by combining the
 yields with opposite spins, \textit{e.g.}
 
@@ -1892,6 +1931,15 @@ J. Balewski, J. Stevens, and J. Zhang, Measurement of the parity-violating longi
 asymmetry for weak boson production in polarized proton-proton collisions in Run 11 + 12 at
 $\sqrt{s} = 510$~GeV (STAR Note \# 597), (2013).
 
+\bibitem{RhicBOS}
+P. M. Nadolsky and C.-P. Yuan, Single-spin physics with W bosons at RHIC, Nucl.Phys. B666, 31 (2003)
+
+\bibitem{Altarelli}
+G.~Altarelli, R.~K.~Ellis, and G.~Martinelli, {\it Z. Phys. C - Particles and Fields} {\bf 27}, 617-632 (1985)
+
+\bibitem{UA1}
+C. Albajar et al., the UA1 Collaboration, {\it Z. Phys. C - Particles and Fields} {\bf 44}, 15-61 (1989)
+
 \bibitem{STAR_W_xSec_2009-paper}
 L. Adamczyk et al. (STAR), Measurement of the $W\rightarrow e\nu$ and $Z^{0}/\gamma^{*}\rightarrow e^{+}e^{-}$ 
 production cross sections at mid-rapidity in proton-proton collisions at
@@ -1906,6 +1954,14 @@ $\sqrt{s}=500$~GeV in Run 9 (STAR Note \# 546), (2011).
 
 \bibitem{RHIC-Pol} 
 RHIC Polarimetry Group, RHIC/CAD Accelerator Physics Note, 490 (2013).
+
+\bibitem{RHIC-Pol-by-Fill}
+RHIC Polarimetry Results by Fill \\
+\url{http://www.phy.bnl.gov/cnipol/fills/}
+
+\bibitem{STAR-Lumi-by-Run}
+STAR run 11 collected luinosity per run in the W triggers\\
+\burl{http://www.star.bnl.gov/protected/common/common2011/trigger2011/lumi500GeV/lum_perrun_BHT3*L2BW.txt}
 
 \bibitem{sqrtFormula}
 B\"{u}ltmann S et al. {\it Phys. Lett. B} {\bf 632} 167 (2006)\\
