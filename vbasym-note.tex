@@ -65,7 +65,7 @@ Collisions at RHIC}
 \author{Dmitri Smirnov\thanks{dsmirnov@bnl.gov}}
 
 \affil{Physics Department, Brookhaven National Lab}
-\date{\today\\v2.0}
+\date{\today\\v3.0}
 
 \maketitle
 
@@ -381,6 +381,32 @@ Having in mind that our $W$ bosons are often produced with a longitudinal moment
 \label{fig:plot_DataMc_Wp} 
 \end{figure}
 
+\subsection{Resolution}
+The expected resolution of the relevant kinematic variables has been studied using PYTHIA 6.4 simulated samples using the ``Perugia 0 tune'' and setting $k_{T}=2$ and $CKIN(3)=10$. 
+In studying the Recoil-$P_{T}$ resolution we compared the total sum of recoil-$P_{T}$ at the generated and reconstructed level in the same boson $y$ and $P_{T}$ bins used for the final asymmetry measurement, see Sec.~\ref{Sec:W-An-measurement}. An acceptance cut of $|\eta < 1|$ corresponding to the acceptance of the STAR calorimeter has been imposed at the generation level.
+
+Due to the random character of the event-by-event $P_{T}$ correction procedure, the correlation between the generated and reconstructed $P_{T}$ in a single event is lost. Therefore the evaluation of the resolution has been done without applying the correction procedure.  
+The relative resolution for recoil-$P_{T}$ has been evaluated looking at the standard deviation of the $\frac{P_{T}^{Gen}-P_{T}^{Rec}}{P_{T}^{Gen}}$ distribution. Fig.~{fig:reso-pt} shows that the relative resolution on recoil-$P_{T}$ decreases from $\sim 50\%$ in the first bins down to $\sim 30\%$ in the last bin.
+
+In the case of the boson rapidity, the relative resolution calculation is sensitive to dividing for $y^{Gen}\sim 0$ and we opted for calculating the absolute resolution as the standard deviation of the $y^{Gen}-y^{Rec}$ distribution. Fig.~{fig:reso-y} shows that the absolute resolution in each of the three $y^{W}$-bins is estimated to be $\sim 0.1$. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{images/resolution/hWp_ResolutionPt}
+\end{center}
+\caption{Absolute resolution in each of the $P_{T}^{W}$-bins used for the asymmetry measurement.}
+\label{fig:reso-pt} 
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.55]{images/resolution/hWp_AbsoResolutionRap}
+\end{center}
+\caption{Absolute resolution in each of the three $y^{W}$-bins used for the asymmetry measurement.}
+\label{fig:reso-y} 
+\end{figure}
+
 
 \subsection{Background estimation}
 
@@ -408,7 +434,7 @@ The background sources considered in this analysis are:
 $Z^{0} \rightarrow e^+e^-$; 
 $W^{\pm} \rightarrow \tau\nu \rightarrow e^+e^-\nu$; 
 QCD events decaying into leptons, where one of the final leptons is not detected.
-The first two sources have been evaluated using MC samples simulated with PYTHIA 6.4 using the ``Perugia tune'' and setting $k_{T}=2$ and $CKIN(3)=10$. The MC samples pass trough the GEANT 3 simulation of the STAR detector using the SL11d libraries and are embedded to the run11 p+p transverse zero-bias events. To estimate the contribution from the background, the MC samples have been normalized to the $W^{+}$ and the $W^{-}$ data samples according to the collected luminosity as shown in Fig.~\ref{fig:plot_WZ_backgrounds}. The estimated background-over-signal values for $W^{\pm} \rightarrow \tau\nu$ and $Z^{0} \rightarrow e^+e^-$ are shown in the first columns of Table~\ref{Tab:BoS}. 
+The first two sources have been evaluated using MC samples simulated with PYTHIA 6.4 using the ``Perugia 0 tune'' and setting $k_{T}=2$ and $CKIN(3)=10$. The MC samples pass trough the GEANT 3 simulation of the STAR detector using the SL11d libraries and are embedded to the run11 p+p transverse zero-bias events. To estimate the contribution from the background, the MC samples have been normalized to the $W^{+}$ and the $W^{-}$ data samples according to the collected luminosity as shown in Fig.~\ref{fig:plot_WZ_backgrounds}. The estimated background-over-signal values for $W^{\pm} \rightarrow \tau\nu$ and $Z^{0} \rightarrow e^+e^-$ are shown in the first columns of Table~\ref{Tab:BoS}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -433,7 +459,7 @@ B/S & 1.88\% ($W^{+}$); 1.39\% ($W^{-}$)&  0.88\% ($W^{+}$); 2.94\% ($W^{-}$)& 1
 \label{Tab:BoS}
 \end{table}
 
-The case of background coming from QCD events is more peculiar since we canon trust the luminosity given by the MC generator. In estimating the background from this source, we followed a ``data-driven'' technique already used at STAR for the $W$ decay analysis with longitudinal beam polarization~\cite{STAR_W_AL_2012-paper, STAR_W_AL_2012-note}. The procedure is the following:
+The case of background coming from QCD events is more peculiar since we cannot trust the luminosity given by the MC generator. In estimating the background from this source, we followed a ``data-driven'' technique already used at STAR for the $W$ decay analysis with longitudinal beam polarization~\cite{STAR_W_AL_2012-paper, STAR_W_AL_2012-note}. The procedure is the following:
 
 \begin{enumerate}
    \item a QCD dominated data sample was selected reversing the $P_{T}$-balance cut ($P_{T}\text{-balance} < 15$~GeV);
