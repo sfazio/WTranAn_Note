@@ -65,7 +65,7 @@ Collisions at RHIC}
 \author{Dmitri Smirnov\thanks{dsmirnov@bnl.gov}}
 
 \affil{Physics Department, Brookhaven National Lab}
-\date{\today\\v3.1}
+\date{\today\\v3.2}
 
 \maketitle
 
@@ -203,7 +203,22 @@ the limited acceptance of the STAR detector.
 
 \section{The $W^{\pm}$ selection and reconstruction}
 \label{Wselection}
-A data sample characterized by the $W$ signature has been selected, mostly requiring an isolated high $P_{T}$ electron and a hadronic recoil with a total $P_{T}$ sufficiently large. We adopt the same selection procedure already used (and described in details) at STAR for weak boson production measurements of polarized longitudinal single-spin asymmetry\cite{STAR_W_AL_2009-paper, STAR_W_AL_2009-note, STAR_W_AL_2012-paper, STAR_W_AL_2012-note} and unpolarized cross section\cite{STAR_W_xSec_2009-paper,STAR_W_xSec_2009-note}. The selection criteria are the following
+In this analysis, data were recorded using a calorimeter trigger requirement of 12 GeV of transverse energy $E_{T}$ in a $\Delta \eta \times \Delta \phi$ region of $\sim0.1 \times 0.1$ of the BEMC.\, namely the 2011 TriggerID 320801. 
+
+A data sample characterized by the $W\rightarrow e \nu$ signature has been selected, mostly requiring an isolated high $P_{T}$ electron. We adopt the same selection procedure already used (and described in details) at STAR for weak boson production measurements of polarized longitudinal single-spin asymmetry\cite{STAR_W_AL_2009-paper, STAR_W_AL_2009-note, STAR_W_AL_2012-paper, STAR_W_AL_2012-note} and unpolarized cross section\cite{STAR_W_xSec_2009-paper,STAR_W_xSec_2009-note}.
+
+We define a $P_{T}$-balance variable, $\vec{P}_{T}^{bal}$, as the vector sum of the decay electron $\vec{P}_{T}^{e}$ and the transverse momentum of the hadronic recoil. 
+
+\begin{equation*}
+%\missET = - \sum_{i \in \parbox[t]{\widthof{\tiny clusters}}{\tiny tracks, clusters}} \vv P_{i,T}.
+\vec{P}_{T}^{bal} = \vec{P}_{T}^{e} + \vec{P}_{T}^{recoil} = \vec{P}_{T}^{e} + \sum_{i \in \parbox[t]{\widthof{\tiny clusters}}{\tiny tracks, clusters}} \vv P_{i,T},
+\end{equation*}
+
+Differently from previous STAR weak boson analyses where a jet reconstruction cone algorithm has been used, in the present work $\vec{P}_{T}^{recoil}$ is calculated as the vectorial sum of  the transverse momentum of all the tracks not belonging to the decay electron candidate and all the trackless clusters in the BEMC with an energy above the noise threshold of 200~MeV. 
+
+The scalar variable signed-$P_{T}$-balance, defined as signed-$P_{T}^{bal} = (\vec{P}_{T}^{bal} \cdot \vec{P}_{T}^{e}) / |\vec{P}_{T}^{e}|$, is used to suppress the QCD background, for details see~\cite{STAR_W_AL_2009-paper, STAR_W_AL_2009-note, STAR_W_AL_2012-paper, STAR_W_AL_2012-note}. 
+
+The selection criteria are the following
 
 \begin{itemize}
 \item One isolated electron
@@ -214,11 +229,11 @@ A data sample characterized by the $W$ signature has been selected, mostly requi
     \item track coming from the maximum ranked vertex;
     \end{itemize}
 \item $|Z_{vertex}| < 100$~cm; vertex rank $>$ 0;    
-\item $P_{T}\text{-balance} > 15$~GeV, rejects QCD back ground;
+\item signed-$P_{T}^{bal}  > 18$~GeV, suppresses QCD back ground;
 \item $0.4 < |\text{Charge(TPC)}*E_{T}\text{(EMC)}/P_{T}\text{(TPC)}| < 1.8$, minimizes charge misidentification.
 \end{itemize}
 
-In the present analysis we also ask the total recoil-$P_{T} > 0.5$~GeV to minimize the systematics uncertainties in reconstructing the $W$ boson transverse momentum as described in Sec.~\ref{PT-reconstruction}.
+In the present analysis we also ask $P_{T}^{recoil} > 0.5$~GeV to minimize the systematics uncertainties in reconstructing the $W$ boson transverse momentum as described in Sec.~\ref{PT-reconstruction}.
 
 %\begin{itemize}
 %\item Total recoil-$P_{T} > 0.5$~GeV; 
@@ -238,17 +253,16 @@ In order to fully reconstruct the $W$ kinematics, the momenta of all $W$-decay
 products must be measured. The momentum of the neutrino produced in the leptonically decayed $W$
 cannot be measured and can only be indirectly deduced from momentum conservation. 
 in the $W$ events produced at $\sqrt{s}=500$~GeV
-at STAR we can assume that most of the missing energy, $\missET$ is carried by the neutrino from the
-$W$ decay. The assumption ${P}_{\nu, T} \approx \missET$ is based on the
-fact that only very little energy is left for anything other than $W$ production
+at STAR we can assume that most of the missing transverse momentum is carried by the neutrino from the
+$W$ decay. This assumption %${P}_{\nu, T} \approx \missET$ 
+is based on the fact that only very little energy is left for anything other than $W$ production
 from the primary hard scattering.
 In the transverse plane the initial momentum of the system of interacting partons is negligible
 and so must be the vector sum of all final particles momenta. We define the
-missing transverse energy as a vector restoring the balance in the event:
+newtrino transverse momentum as a vector restoring the balance in the event:
 
 \begin{equation}
-\missET = - \sum_{i \in \parbox[t]{\widthof{\tiny clusters}}{\tiny tracks, clusters}} \vv P_{i,T}.
-%miss ET = - \sum_{clusters}{jets, tracks, clusters} P_{i,T}.
+\vec{P}_{T}^{\nu} = - \vec{P}_{T}^{recoil} = - \sum_{i \in \parbox[t]{\widthof{\tiny clusters}}{\tiny tracks, clusters}} \vv P_{i,T}.
 \end{equation}
 
 In a typical collider detector like STAR the problem with measuring the missing momentum from the hadronic recoil
@@ -258,9 +272,9 @@ momentum. We accounted for the non measured tracks and clusters by using the fol
 correction to the data
 
 \begin{equation}
-k_{i}=\frac{P^{W}_{T,i}(true)}{P^{Recoil}_{T,i}(reconstructed)},
+k_{i}=\frac{P^{W}_{T,i}(true)}{P^{recoil}_{T,i}(reconstructed)},
 \end{equation}
-where $P^{W}_{T,i}(true)$ is the generated $P_{T}$ of the $W$ at MC level and $P^{Recoil}_{T,i}(reconstructed)$ is the $P_{T}$ of the recoil reconstructed after a full GEANT simulation of the detector in each $i$-th bin. The distribution of the correction factor, $k$, versus the recoil $P_{T}$ is shown in Fig.~\ref{fig:plot_PtCorrFactor}. The correction has been applied to the data on an event-by-event base as follows
+where $P^{W}_{T,i}(true)$ is the generated $P_{T}$ of the $W$ at MC level and $P^{recoil}_{T,i}(reconstructed)$ is the $P_{T}$ of the recoil reconstructed after a full GEANT simulation of the detector in each $i$-th bin. The distribution of the correction factor, $k$, versus the recoil $P_{T}$ is shown in Fig.~\ref{fig:plot_PtCorrFactor}. The correction has been applied to the data on an event-by-event base as follows
 
 \begin{enumerate}
    \item read the $i$-th bin of recoil-$P_{T}$ from data;
@@ -271,7 +285,7 @@ where $P^{W}_{T,i}(true)$ is the generated $P_{T}$ of the $W$ at MC level and $P
 
 A MC test shows that after the correction has been applied, data are in a very good agreement with predictions from RhicBOS and PYTHIA, as shown in Fig.~\ref{fig:plot_PtCorr}. In reconstructing the hadronic recoil from the tracks and clusters, additional cuts have been applied to avoid the very low total recoil-$P_{T}$, when most of the tracks fall off the STAR tracker (TPC) acceptance 
 \begin{itemize}
-   \item[--] Total recoil-$P_{T} > 0.5$~GeV; 
+   \item[--] Total $P_{T}^{recoil} > 0.5$~GeV; 
     \item[--] $P_{T}$ of each single track in the recoil $> 0.2$~GeV. 
 \end{itemize}
 Figure~\ref{fig:plot_DataMc_WpPt_PtRecoil} shows how the data/MC agreements improves requiring a minimum recoil-$P_{T}$ value of 0.5~GeV compared with a lower or no threshold.
